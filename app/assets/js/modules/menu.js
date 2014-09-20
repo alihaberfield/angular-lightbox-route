@@ -1,5 +1,5 @@
 angular.module('myApp.menu', ['ngRoute'])
-    .controller('MenuCtrl', ['$scope', '$rootScope', 'DataService', function($scope, $rootScope, DataService) {
+    .controller('MenuCtrl', ['$scope', 'DataService', function($scope, DataService) {
 
         $scope.cards = loadData();
 
@@ -8,13 +8,11 @@ angular.module('myApp.menu', ['ngRoute'])
             DataService.getJSON()
                 .then(
                 function( articles ) {
-                    console.log("at then, articles is: ");
-                    console.log(articles);
-                    $scope.cards = articles;
-
+                    $scope.cards = $.map(articles, function(el) { return el; });
 
                 }
             );
         }
+
 
     }]);

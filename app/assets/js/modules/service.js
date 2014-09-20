@@ -3,11 +3,14 @@ angular.module('myApp.services', [])
 
         // Return public API.
         return({
-            getJSON: getJSON
+            getJSON: getJSON,
+            getCard: getCard
         });
 
-        function getJSON() {
+        var cards,
+            card;
 
+        function getJSON() {
             var request = $http({
                 method: "get",
                 dataType: 'jsonp',
@@ -16,7 +19,21 @@ angular.module('myApp.services', [])
                     action: "get"
                 }
             });
-            return( request.then( handleSuccess, handleError ) );
+
+            if (!cards) {
+                console.log("cards not loaded yet - loading")
+                return( request.then( handleSuccess, handleError ) );
+            } else {
+                return cards;
+            }
+
+        }
+
+        function getCard(name) {
+            if (cards) {
+                card = cards[name];
+            }
+            return card;
         }
 
         function handleError( response ) {
@@ -34,7 +51,8 @@ angular.module('myApp.services', [])
         function handleSuccess( response ) {
             console.log("success");
             console.log("data");
-            return( response.data );
+            cards = response.data;
+            return( cards );
 
         }
 

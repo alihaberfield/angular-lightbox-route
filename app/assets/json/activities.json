@@ -1,5 +1,5 @@
-[
-    {
+{
+    "walk" : {
         "shortName": "walk",
         "longName": "Walking and power-walking",
         "menuText": "Have you been walking today?",
@@ -7,7 +7,7 @@
         "unit": "minutes",
         "recordMessage": " minutes of walking today, well done!"
     },
-    {
+    "run" : {
         "shortName": "run",
         "longName": "Running or jogging",
         "menuText": "Been out for a run?",
@@ -15,7 +15,7 @@
         "unit": "kilometers",
         "recordMessage": " kms run today, great work!"
     },
-    {
+    "dance" : {
         "shortName": "dance",
         "longName": "Dancing and aerobics",
         "menuText": "Is today a dancing day?",
@@ -23,7 +23,7 @@
         "unit": "songs",
         "recordMessage": " songs danced today!"
     },
-    {
+    "cycle" : {
         "shortName": "cycle",
         "longName": "Cycling",
         "menuText": "Is today a dancing day?",
@@ -31,7 +31,7 @@
         "unit": "kilometers",
         "recordMessage": " kms of cycle power today!"
     },
-    {
+    "meditate" : {
         "shortName": "meditate",
         "longName": "Meditation",
         "menuText": "Have you had your meditation moment today?",
@@ -39,4 +39,4 @@
         "unit": "minutes",
         "recordMessage": " minutes of inner peace!"
     }
-]
+}
