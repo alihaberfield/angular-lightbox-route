@@ -1,0 +1,6 @@
+//Directories:
+node_modules/
+.sass-cache/
+
+//Files:
+.idea
