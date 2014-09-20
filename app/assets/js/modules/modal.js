@@ -4,25 +4,11 @@ angular.module('myApp.modal', ['ngRoute'])
 
         var modalInstance = $modal.open({
             templateUrl : '../assets/templates/modal.html',
-            controller: 'ModalCtrl',
-            resolve: {
-                message: function () {
-                    return $scope.message;
-                }
-            }
+            controller: 'ModalCtrl'
         });
 
         $scope.activity = $route.current.pathParams.name;
-        $scope.message = "testing"
 
-
-        console.log($scope.activity);
-
-        //Modal controls
-        $scope.close = function () {
-            console.log("close!");
-            $modalInstance.close();
-        };
 
         $scope.$on("$locationChangeStart", function (event, nextLocation, currentLocation) {
             modalInstance.close();
@@ -32,11 +18,10 @@ angular.module('myApp.modal', ['ngRoute'])
     .controller('ModalCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
 
 
-
-        //Modal controls
+        //When close button is clicked, return to menu
         $scope.close = function () {
             $modalInstance.dismiss();
-            $location.path('/newValue');
+            $location.path('/menu');
         };
 
         $scope.activity = $route.current.pathParams.name;
@@ -49,6 +34,7 @@ angular.module('myApp.modal', ['ngRoute'])
         $scope.TrustDangerousSnippet = function(post) {
             return $sce.trustAsHtml(post);
         };
+
 
 
 

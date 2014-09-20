@@ -11,28 +11,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../assets/lib/css/normalize.css">
   <link rel="stylesheet" href="../assets/lib/css/main.css">
-  <link rel="stylesheet" href="../assets/css/tidy.css"/>
+
+
+    <!-- @if NODE_ENV == 'DEVELOPMENT' -->
+
+    <link rel="stylesheet" href="../assets/css/styles.css"/>
+
+    <!-- @endif -->
+
+    <!-- @if NODE_ENV == 'PRODUCTION' -->
+
+    <link rel="stylesheet" href="../assets/css/tidy.css"/>
+
+    <!-- @endif -->
+
   <script src="../assets/lib/js/modernizr-2.6.2.min.js"></script>
 
 
 
 </head>
 <body>
-<h1>I am the page. Testing</h1>
 
-<div ng-controller="MenuCtrl">
- <ul class="menu">
-     <li ng-repeat="card in cards">
-        <a href="#/card/{{ card.shortName }}">{{ card.shortName }} </a>
-     </li>
- </ul>
+
+
+<div class="row">
+
+    <div class="large-12 columns" role="content" ng-controller="MenuCtrl">
+
+        <article>
+
+            <li ng-repeat="card in cards">
+                <a href="#/card/{{ card.shortName }}" class="button expand">{{ card.shortName }} </a>
+            </li>
+
+        </article>
+
+
+    </div>
+
+
+    <script type="text/ng-template" id="modalContainer">
+
+    </script>
 
 </div>
 
 
-<script type="text/ng-template" id="modalContainer">
-    <div></div>
-</script>
+
+
 
   <div ng-view></div>
 
@@ -55,6 +81,7 @@
     <script src="../assets/js/modules/service.js"></script>
     <script src="../assets/js/modules/menu.js"></script>
     <script src="../assets/js/modules/modal.js"></script>
+    <script src="../assets/js/modules/modal.jquery.js"></script>
 
   <!-- @endif -->
 

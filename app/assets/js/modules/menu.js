@@ -3,6 +3,7 @@ angular.module('myApp.menu', ['ngRoute'])
 
         $scope.cards = loadData();
 
+
         function loadData() {
             // The articleService returns a promise.
             DataService.getJSON()

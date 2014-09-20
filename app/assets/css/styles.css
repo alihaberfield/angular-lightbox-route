@@ -6240,38 +6240,29 @@ a.th {
   max-width: 800px;
 }
 
-/* app css stylesheet */
+/* Ali's SCSS */
 /* line 3, ../sass/_app.scss */
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  height: 100%;
 }
 
-/* line 10, ../sass/_app.scss */
-.menu:before {
-  content: "[";
-}
-
-/* line 14, ../sass/_app.scss */
-.menu:after {
-  content: "]";
+/* line 12, ../sass/_app.scss */
+.modal {
+  position: absolute;
+  z-index: 1050;
+  top: 50px;
 }
 
 /* line 18, ../sass/_app.scss */
-.menu > li {
-  display: inline;
-}
-
-/* line 22, ../sass/_app.scss */
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-/* line 27, ../sass/_app.scss */
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+.modal-content {
+  background: white;
+  width: 80%;
+  padding: 1.25em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
 }

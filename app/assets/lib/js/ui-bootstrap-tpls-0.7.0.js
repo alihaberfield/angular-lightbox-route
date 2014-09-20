@@ -83,6 +83,7 @@ angular.module('ui.bootstrap.transition', [])
         return $transition;
     }]);
 
+
 angular.module('ui.bootstrap.bindHtml', [])
 
     .directive('bindHtmlUnsafe', function () {
@@ -154,7 +155,7 @@ angular.module('ui.bootstrap.modal', [])
 /**
  * A helper directive for the $modal service. It creates a backdrop element.
  */
-    .directive('modalBackdrop', ['$modalStack', '$timeout', function ($modalStack, $timeout) {
+    .directive('modalBackdrop', ['$modalStack', '$timeout', '$location', function ($modalStack, $timeout, $location) {
         return {
             restrict: 'EA',
             replace: true,
@@ -168,11 +169,13 @@ angular.module('ui.bootstrap.modal', [])
 
                 scope.close = function (evt) {
                     var modal = $modalStack.getTop();
+
                     if (modal && modal.value.backdrop && modal.value.backdrop != 'static') {
                         evt.preventDefault();
                         evt.stopPropagation();
                         $modalStack.dismiss(modal.key, 'backdrop click');
                     }
+                    $location.path('/menu');
                 };
             }
         };
@@ -410,6 +413,10 @@ angular.module('ui.bootstrap.modal', [])
 
         return $modalProvider;
     });
+
+
+
+
 
 
 angular.module("template/modal/backdrop.html", []).run(["$templateCache", function($templateCache) {
