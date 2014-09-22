@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html id="ng-app">
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" id="ng-app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" id="ng-app" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
@@ -11,27 +11,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../assets/lib/css/normalize.css">
   <link rel="stylesheet" href="../assets/lib/css/main.css">
-  <link rel="stylesheet" href="../assets/css/tidy.css"/>
+
+
+    <link rel="stylesheet" href="../assets/css/styles.css"/>
+
+
+
   <script src="../assets/lib/js/modernizr-2.6.2.min.js"></script>
 
 
 
 </head>
 <body>
-<h1>I am the page.</h1>
 
-<div ng-controller="MenuCtrl">
-    <ul>
-        <li><a href="#/page/running">Running</a></li>
-        <li><a href="#/page/walking">Walking</a></li>
-    </ul>
+
+
+<div class="row">
+
+    <div class="large-12 columns page" role="content" ng-controller="MenuCtrl">
+
+        <h1>GoldStars Goal Tracker</h1>
+        <p class="sub-heading">Today's progress:<br/>
+            <span ng-repeat="card in cards | orderBy:'input'" ng-class="{'icon-star': card.input, 'icon-star-o': !card.input}">
+            </span>
+        </p>
+
+        <p class="intro">Enter your activity into your goals to make progress:</p>
+
+        <ul class="menu">
+            <li ng-repeat="card in cards" ng-class="{'complete': card.input}" class="button expand card-{{ card.shortName}}">
+                <a href="#/card/{{ card.shortName }}">
+                <span class="left" ng-class="{'icon-clock-o' : !card.input, 'icon-check': card.input}"></span>
+
+                    <span ng-if="!card.input">{{ card.menuText }}</span>
+                    <span ng-if="card.input">{{ card.input }} {{ card.recordMessage }}</span>
+                </a>
+            </li>
+        </ul>
+
+
+
+    </div>
+
+
+    <script type="text/ng-template" id="modalContainer">
+    </script>
 
 </div>
 
 
-<script type="text/ng-template" id="modalContainer">
-    <div></div>
-</script>
+
+
 
   <div ng-view></div>
 
@@ -43,10 +73,6 @@
 <!-- TODO: localise -->
 <!-- <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.7.0.js"></script> -->
 <script src="../assets/lib/js/ui-bootstrap-tpls-0.7.0.js"></script>
-
-
-<link href="../assets/lib/css/bootstrap-tidy.css" rel="stylesheet">
-
 
   <script src="../assets/js/prod/production.min.js"></script>
 

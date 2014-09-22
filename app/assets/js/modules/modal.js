@@ -17,7 +17,6 @@ angular.module('myApp.modal', ['ngRoute'])
 
         //When modal overlay is clicked, return to menu
         $scope.close = function () {
-            console.log("ModalContainer close")
             $modalInstance.dismiss();
             $location.path('/menu');
         };

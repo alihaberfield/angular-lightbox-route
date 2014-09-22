@@ -64,7 +64,6 @@ angular.module('myApp.services', [])
             });
 
             if (!cards) {
-                console.log("cards not loaded yet - loading")
                 return( request.then( handleSuccess, handleError ) );
             } else {
                 return cards;

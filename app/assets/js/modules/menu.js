@@ -8,7 +8,6 @@ angular.module('myApp.menu', ['ngRoute'])
             DataService.getJSON()
                 .then(
                 function( articles ) {
-                    console.log("this is loadData in MenuCtrl")
                     $scope.cards = $.map(articles, function(el) { return el; });
 
                 }

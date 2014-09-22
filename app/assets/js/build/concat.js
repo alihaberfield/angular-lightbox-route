@@ -10,7 +10,7 @@ angular.module('myApp', [
 ])
 .config(function($routeProvider) {
     $routeProvider
-        .when('/page/:name', {
+        .when('/card/:name', {
             templateUrl : 'modalContainer',
             controller : 'ModalContainerCtrl'
         })
@@ -22,63 +22,124 @@ angular.module('myApp', [
 
 
 angular.module('myApp.menu', ['ngRoute'])
-    .controller('MenuCtrl', ['$scope', '$rootScope', 'DataService', function($scope, $rootScope, DataService) {
+    .controller('MenuCtrl', ['$scope', 'DataService', function($scope, DataService) {
 
-        $rootScope.cards = loadData();
+        $scope.cards = loadData();
 
         function loadData() {
             // The articleService returns a promise.
             DataService.getJSON()
                 .then(
                 function( articles ) {
-                    
-                    
-                    $rootScope.cards = articles;
+                    $scope.cards = $.map(articles, function(el) { return el; });
 
                 }
             );
         }
-
     }]);
 angular.module('myApp.modal', ['ngRoute'])
 
-.controller('ModalContainerCtrl',['$scope', '$modal', '$route', function($scope, $modal, $route) {
+    .controller('ModalContainerCtrl',['$scope', '$modal', '$route', '$location', function($scope, $modal, $route, $location) {
 
-    var modalInstance = $modal.open({
-        templateUrl : '../assets/templates/modal.html',
-        controller: 'ModalCtrl'
-    });
 
-    $scope.activity = $route.current.pathParams.name;
-    
+        var modalInstance = $modal.open({
+            templateUrl : '../assets/templates/modal.html',
+            controller: 'ModalCtrl'
+        });
 
-    //Modal controls
-    $scope.close = function () {
-        
-        $modalInstance.close();
-    };
+        $scope.activity = $route.current.pathParams.name;
 
-}])
-.controller('ModalCtrl', ['$scope', '$route', '$location', '$modalInstance', function($scope, $route, $location, $modalInstance) {
-    //Modal controls
-    $scope.close = function () {
-        $modalInstance.dismiss();
-        $location.path('/newValue');
-    };
 
-    $scope.activity = $route.current.pathParams.name;
+        $scope.$on("$locationChangeStart", function (event, nextLocation, currentLocation) {
+            modalInstance.close();
+        });
 
-}]);
+        //When modal overlay is clicked, return to menu
+        $scope.close = function () {
+            $modalInstance.dismiss();
+            $location.path('/menu');
+        };
+
+    }])
+    .controller('ModalCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
+
+
+        //When close button is clicked, return to menu
+        $scope.close = function () {
+            $modalInstance.dismiss();
+            $location.path('/menu');
+        };
+
+        $scope.activity = $route.current.pathParams.name;
+
+        $scope.card = DataService.getCard($scope.activity);
+        $scope.next = DataService.getNext();
+        $scope.prev = DataService.getPrev();
+
+
+        $scope.TrustDangerousSnippet = function(post) {
+            return $sce.trustAsHtml(post);
+        };
+
+
+    }]);
+
 angular.module('myApp.services', [])
     .service('DataService', ['$http', '$q', function($http, $q) {
 
         // Return public API.
         return({
-            getJSON: getJSON
+            getJSON: getJSON,
+            getCard: getCard,
+            getNext: getNext,
+            getPrev: getPrev
         });
 
-        function getJSON() {
+        var card,
+            cards,
+            next,
+            prev,
+            nextIndex,
+            prevIndex;
 
+        function getCard(name) {
+            var i;
+            if (cards) {
+                for (i = 0; i<cards.length;i++) {
+                    if (cards[i].shortName == name) {
+                        card = cards[i];
+                        nextIndex = i + 1;
+                        prevIndex = i - 1;
+                        next = cards[nextIndex];
+                        prev = cards[prevIndex];
+                        return card;
+                    }
+                }
+            }
+            return card;
+        }
+
+        function getNext() {
+            if (next) {
+                return next.shortName;
+            } else {
+                return cards[0].shortName;
+            }
+
+        }
+
+        function getPrev() {
+            if (prev) {
+                return prev.shortName;
+            } else {
+
+                return cards[cards.length-1].shortName;
+            }
+
+        }
+
+
+        function getJSON() {
             var request = $http({
                 method: "get",
                 dataType: 'jsonp',
@@ -87,7 +148,13 @@ angular.module('myApp.services', [])
                     action: "get"
                 }
             });
-            return( request.then( handleSuccess, handleError ) );
+
+            if (!cards) {
+                return( request.then( handleSuccess, handleError ) );
+            } else {
+                return cards;
+            }
+
         }
 
         function handleError( response ) {
@@ -103,10 +170,17 @@ angular.module('myApp.services', [])
         }
 
         function handleSuccess( response ) {
-            
-            
-            return( response.data );
+            cards = response.data;
+            return( cards );
 
         }
+
+    }])
+    .service('InputService', ['', function() {
+
+        //Public API
+        return ({
+
+        })
 
     }]);

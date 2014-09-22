@@ -33,7 +33,7 @@ Or, manually build for dev or prod:
 
 ```
 grunt dev
-grunt watch
+grunt prod
 ```
 
 
