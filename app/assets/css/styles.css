@@ -6268,69 +6268,130 @@ body {
   top: 50px;
 }
 
-/* line 26, ../sass/_app.scss */
+/* line 28, ../sass/_app.scss */
 .modal-content {
   background: white;
   width: 80%;
-  padding: 1.25em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   margin: 0 auto;
 }
 
 /* line 35, ../sass/_app.scss */
+.modal-header, .modal-body {
+  padding: 1.25em;
+}
+
+/* line 39, ../sass/_app.scss */
+.title {
+  text-align: center;
+}
+
+/* line 43, ../sass/_app.scss */
+.modal-header {
+  border-bottom: 1px solid #a1aeb9;
+  background: #e0fffc;
+}
+/* line 47, ../sass/_app.scss */
+.modal-header h1 {
+  padding: 0.5em;
+}
+@media only screen and (min-width: 1280px) {
+  /* line 47, ../sass/_app.scss */
+  .modal-header h1 {
+    margin: 1em 4em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 47, ../sass/_app.scss */
+  .modal-header h1 {
+    background: #00ad9f;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* line 60, ../sass/_app.scss */
+  .modal-header .columns {
+    width: 100%;
+  }
+}
+
+/* line 65, ../sass/_app.scss */
 .modal .row {
   max-width: 100%;
 }
 
-/* line 39, ../sass/_app.scss */
+/* line 69, ../sass/_app.scss */
 .close {
   background: #fc5749;
   border-color: #a91003;
 }
-/* line 43, ../sass/_app.scss */
+/* line 73, ../sass/_app.scss */
 .close:hover {
   background: #db1404;
 }
 
-/* line 48, ../sass/_app.scss */
+/* line 78, ../sass/_app.scss */
 .complete {
   background: #8fc258;
   border-color: #425e23;
 }
-/* line 52, ../sass/_app.scss */
+/* line 82, ../sass/_app.scss */
 .complete:hover {
   background: #5c8430;
 }
+/* line 86, ../sass/_app.scss */
+.complete:before {
+  font-size: 2em;
+}
 
-/* line 58, ../sass/_app.scss */
+/* line 92, ../sass/_app.scss */
 .sub-heading {
   color: #697c8b;
   font-size: 2em;
 }
 
-/* line 62, ../sass/_app.scss */
+/* line 96, ../sass/_app.scss */
 .icon-star-o {
   color: #3d4851;
 }
 
-/* line 65, ../sass/_app.scss */
+/* line 99, ../sass/_app.scss */
 .icon-star {
   color: #fcd954;
 }
 
-/* line 69, ../sass/_app.scss */
+/* line 104, ../sass/_app.scss */
 .menu {
   list-style: none;
   margin-left: 0;
   font-size: 1.5em;
 }
+/* line 109, ../sass/_app.scss */
+.menu a {
+  display: block;
+  padding: 1em;
+  color: #fff;
+}
+/* line 114, ../sass/_app.scss */
+.menu a:hover {
+  color: #fff;
+}
+/* line 119, ../sass/_app.scss */
+.menu .button {
+  padding: 0;
+}
 
-/* line 75, ../sass/_app.scss */
+/* line 124, ../sass/_app.scss */
 .intro {
   font-size: 1.5em;
   color: #3d4851;
 }
 
+@media only screen and (max-width: 768px) {
+  /* line 131, ../sass/_app.scss */
+  .prev, .next {
+    width: 50%;
+  }
+}
 @font-face {
   font-family: 'icomoon';
   src: url("../font/icomoon.eot?kt9gr5");

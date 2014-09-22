@@ -102,16 +102,18 @@ $shiny-edge-size: 0 0 0;
 
 // Media Queries
 
-// $small-screen: 768px;
+  $small-screen: 768px;
 // $medium-screen: 1280px;
 // $large-screen: 1440px;
 
-// $screen: "only screen";
-// $small: "only screen and (min-width: #{$small-screen})";
+  $screen: "only screen";
+  $small-range: (0em, 40em);
+  $small: "only screen and (min-width: #{$small-screen})";
 // $medium: "only screen and (min-width: #{$medium-screen})";
 // $large: "only screen and (min-width: #{$large-screen})";
 // $landscape: "only screen and (orientation: landscape)";
 // $portrait: "only screen and (orientation: portrait)";
+  $small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
 
 //// Cursors
 

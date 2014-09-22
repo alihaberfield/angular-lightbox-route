@@ -34,11 +34,13 @@
             </span>
         </p>
 
-        <p class="intro">Enter your activity into your goals to make progress!</p>
+        <p class="intro">Enter your activity into your goals to make progress:</p>
 
         <ul class="menu">
-            <li ng-repeat="card in cards">
-                <a href="#/card/{{ card.shortName }}" ng-class="{'complete': card.input, 'icon-leaf' : !card.input, 'icon-check': card.input}" class="button expand card-{{ card.shortName}}">
+            <li ng-repeat="card in cards" ng-class="{'complete': card.input}" class="button expand card-{{ card.shortName}}">
+                <a href="#/card/{{ card.shortName }}">
+                <span class="left" ng-class="{'icon-clock-o' : !card.input, 'icon-check': card.input}"></span>
+
                     <span ng-if="!card.input">{{ card.menuText }}</span>
                     <span ng-if="card.input">{{ card.input }} {{ card.recordMessage }}</span>
                 </a>
@@ -51,7 +53,6 @@
 
 
     <script type="text/ng-template" id="modalContainer">
-
     </script>
 
 </div>
@@ -70,10 +71,6 @@
 <!-- TODO: localise -->
 <!-- <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.7.0.js"></script> -->
 <script src="../assets/lib/js/ui-bootstrap-tpls-0.7.0.js"></script>
-
-
-<link href="../assets/lib/css/bootstrap-tidy.css" rel="stylesheet">
-
 
     <script src="../assets/js/modules/app.js"></script>
     <script src="../assets/js/modules/service.js"></script>

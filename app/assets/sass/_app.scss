@@ -21,16 +21,46 @@ body {
   position: absolute;
   z-index: 1050;
   top: $reveal-position-top;
+
+
 }
 
 .modal-content {
   background: $reveal-modal-bg;
   width: $reveal-default-width;
-  padding: $reveal-modal-padding;
   box-shadow: $reveal-box-shadow;
   margin: 0 auto;
-
 }
+
+.modal-header, .modal-body {
+  padding: $reveal-modal-padding;
+}
+
+.title {
+  text-align: center;
+}
+
+.modal-header {
+  border-bottom: 1px solid lighten($dark-grey, 40%);
+  background: lighten($primary-color, 60%);
+
+  h1 {
+    @media #{$medium} {
+      margin: 1em 4em;
+    }
+    @media #{$small} {
+      background: $primary-color;
+    }
+
+    padding: 0.5em;
+  }
+
+  @media only screen and (max-width: $small-screen)
+  {
+    .columns {width: 100%;}
+  }
+}
+
 
 .modal .row {
   max-width: 100%;
@@ -52,6 +82,10 @@ body {
   &:hover {
     background: darken($success-color, 20%);
   }
+
+  &:before {
+    font-size:2em;
+  }
 }
 
 
@@ -66,13 +100,35 @@ body {
   color: $secondary-color;
 }
 
+
 .menu {
   list-style: none;
   margin-left: 0;
   font-size:1.5em;
+
+  a {
+    display:block;
+    padding: 1em;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .button {
+    padding: 0;
+  }
 }
 
 .intro {
   font-size: 1.5em;
   color: $dark-grey;
+}
+
+@media only screen and (max-width: $small-screen)
+{
+  .prev, .next {
+    width: 50%;
+  }
 }
