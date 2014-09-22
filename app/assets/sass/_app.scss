@@ -5,6 +5,7 @@ body {
 }
 
 .page {
+  background: #FFF;
   background: rgba(255,255,255,0.8);
 }
 
@@ -22,7 +23,6 @@ body {
   z-index: 1050;
   top: $reveal-position-top;
 
-
 }
 
 .modal-content {
@@ -30,6 +30,7 @@ body {
   width: $reveal-default-width;
   box-shadow: $reveal-box-shadow;
   margin: 0 auto;
+  border: 1px solid $dark-grey;
 }
 
 .modal-header, .modal-body {
