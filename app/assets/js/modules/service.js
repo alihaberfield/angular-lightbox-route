@@ -37,7 +37,7 @@ angular.module('myApp.services', [])
             if (next) {
                 return next.shortName;
             } else {
-                return
+                return cards[0].shortName;
             }
 
         }
@@ -47,7 +47,7 @@ angular.module('myApp.services', [])
                 return prev.shortName;
             } else {
 
-                return
+                return cards[cards.length-1].shortName;
             }
 
         }
@@ -89,5 +89,13 @@ angular.module('myApp.services', [])
             return( cards );
 
         }
+
+    }])
+    .service('InputService', ['', function() {
+
+        //Public API
+        return ({
+
+        })
 
     }]);

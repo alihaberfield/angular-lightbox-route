@@ -1,13 +1,41 @@
 <div class="modal-content">
 
-    <div class="modal-header">
-        <h1>{{ card.longName }} </h1>
-        <a ng-if="prev" href="#/card/{{ prev }}">Previous</a> --- <a href="#/card/{{ next }}" ng-if="next">Next</a>
+    <div class="row card-navigation">
+        <div class="column large-12"><button href="#" aria-label="Close" class="button close icon-times right" ng-click="close()"></button></div>
+        <div class="columns large-6"><a href="#/card/{{ prev }}" class="icon-arrow-left">Previous</a></div>
+        <div class="columns large-6"><a href="#/card/{{ next }}" class="right icon-arrow-right">Next</a></div>
     </div>
+
+    <div class="modal-header">
+        <h1>{{ card.longName }} <span ng-class="{'icon-star': card.input, 'icon-star-o': !card.input}"></span> </h1>
+
+
+
+        <form>
+            <div class="row">
+                <div class="large-8">
+                    <p>How much did you {{ card.shortName }} today?</p>
+                    <div class="row">
+                        <div class="small-4 columns">
+                            <input type="text" id="activity-input" placeholder="0" ng-model="card.input">
+                        </div>
+                        <div class="small-4 columns left">
+                            <label for="activity-input" class="left inline">{{ card.unit }}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+
     <div class="modal-body">
+
         <p ng-bind-html="TrustDangerousSnippet(card.longText)"></p>
 
-        <button class="btn btn-primary" ng-click="close()">Close</button>
+
 
     </div>
 

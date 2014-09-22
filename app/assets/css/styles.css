@@ -1590,13 +1590,13 @@ td {
 /* Default Link Styles */
 /* line 151, ../sass/foundation/components/_type.scss */
 a {
-  color: #2ba6cb;
+  color: #00ad9f;
   text-decoration: none;
   line-height: inherit;
 }
 /* line 157, ../sass/foundation/components/_type.scss */
 a:hover, a:focus {
-  color: #2795b6;
+  color: #009488;
 }
 /* line 159, ../sass/foundation/components/_type.scss */
 a img {
@@ -1703,7 +1703,7 @@ small {
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
-  color: #7f0a0c;
+  color: #f41704;
 }
 
 /* Lists */
@@ -2000,13 +2000,13 @@ button, .button {
   padding-bottom: 0.8125em;
   padding-left: 1.5em;
   font-size: 1em;
-  background-color: #2ba6cb;
-  border-color: #2284a1;
+  background-color: #00ad9f;
+  border-color: #007a70;
   color: white;
 }
 /* line 121, ../sass/foundation/components/_buttons.scss */
 button:hover, button:focus, .button:hover, .button:focus {
-  background-color: #2284a1;
+  background-color: #007a70;
 }
 /* line 132, ../sass/foundation/components/_buttons.scss */
 button:hover, button:focus, .button:hover, .button:focus {
@@ -2014,27 +2014,27 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 /* line 175, ../sass/foundation/components/_buttons.scss */
 button.secondary, .button.secondary {
-  background-color: #e9e9e9;
-  border-color: #d0d0d0;
-  color: #333333;
+  background-color: #fcd954;
+  border-color: #fbce22;
+  color: white;
 }
 /* line 121, ../sass/foundation/components/_buttons.scss */
 button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
-  background-color: #d0d0d0;
+  background-color: #fbce22;
 }
-/* line 127, ../sass/foundation/components/_buttons.scss */
+/* line 132, ../sass/foundation/components/_buttons.scss */
 button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
-  color: #333333;
+  color: white;
 }
 /* line 176, ../sass/foundation/components/_buttons.scss */
 button.success, .button.success {
-  background-color: #5da423;
-  border-color: #457a1a;
+  background-color: #8fc258;
+  border-color: #76a93e;
   color: white;
 }
 /* line 121, ../sass/foundation/components/_buttons.scss */
 button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
-  background-color: #457a1a;
+  background-color: #76a93e;
 }
 /* line 132, ../sass/foundation/components/_buttons.scss */
 button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
@@ -2042,13 +2042,13 @@ button.success:hover, button.success:focus, .button.success:hover, .button.succe
 }
 /* line 177, ../sass/foundation/components/_buttons.scss */
 button.alert, .button.alert {
-  background-color: #c60f13;
-  border-color: #970b0e;
+  background-color: #fc5749;
+  border-color: #fb2917;
   color: white;
 }
 /* line 121, ../sass/foundation/components/_buttons.scss */
 button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
-  background-color: #970b0e;
+  background-color: #fb2917;
 }
 /* line 132, ../sass/foundation/components/_buttons.scss */
 button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
@@ -2096,8 +2096,8 @@ button.right-align, .button.right-align {
 }
 /* line 187, ../sass/foundation/components/_buttons.scss */
 button.disabled, button[disabled], .button.disabled, .button[disabled] {
-  background-color: #2ba6cb;
-  border-color: #2284a1;
+  background-color: #00ad9f;
+  border-color: #007a70;
   color: white;
   cursor: default;
   opacity: 0.6;
@@ -2106,7 +2106,7 @@ button.disabled, button[disabled], .button.disabled, .button[disabled] {
 }
 /* line 121, ../sass/foundation/components/_buttons.scss */
 button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-  background-color: #2284a1;
+  background-color: #007a70;
 }
 /* line 132, ../sass/foundation/components/_buttons.scss */
 button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
@@ -2114,13 +2114,13 @@ button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[dis
 }
 /* line 145, ../sass/foundation/components/_buttons.scss */
 button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-  background-color: #2ba6cb;
+  background-color: #00ad9f;
 }
 /* line 188, ../sass/foundation/components/_buttons.scss */
 button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
-  background-color: #e9e9e9;
-  border-color: #d0d0d0;
-  color: #333333;
+  background-color: #fcd954;
+  border-color: #fbce22;
+  color: white;
   cursor: default;
   opacity: 0.6;
   -webkit-box-shadow: none;
@@ -2128,20 +2128,20 @@ button.disabled.secondary, button[disabled].secondary, .button.disabled.secondar
 }
 /* line 121, ../sass/foundation/components/_buttons.scss */
 button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
-  background-color: #d0d0d0;
+  background-color: #fbce22;
 }
-/* line 127, ../sass/foundation/components/_buttons.scss */
+/* line 132, ../sass/foundation/components/_buttons.scss */
 button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
-  color: #333333;
+  color: white;
 }
 /* line 145, ../sass/foundation/components/_buttons.scss */
 button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
-  background-color: #e9e9e9;
+  background-color: #fcd954;
 }
 /* line 189, ../sass/foundation/components/_buttons.scss */
 button.disabled.success, button[disabled].success, .button.disabled.success, .button[disabled].success {
-  background-color: #5da423;
-  border-color: #457a1a;
+  background-color: #8fc258;
+  border-color: #76a93e;
   color: white;
   cursor: default;
   opacity: 0.6;
@@ -2150,7 +2150,7 @@ button.disabled.success, button[disabled].success, .button.disabled.success, .bu
 }
 /* line 121, ../sass/foundation/components/_buttons.scss */
 button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
-  background-color: #457a1a;
+  background-color: #76a93e;
 }
 /* line 132, ../sass/foundation/components/_buttons.scss */
 button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
@@ -2158,12 +2158,12 @@ button.disabled.success:hover, button.disabled.success:focus, button[disabled].s
 }
 /* line 145, ../sass/foundation/components/_buttons.scss */
 button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
-  background-color: #5da423;
+  background-color: #8fc258;
 }
 /* line 190, ../sass/foundation/components/_buttons.scss */
 button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[disabled].alert {
-  background-color: #c60f13;
-  border-color: #970b0e;
+  background-color: #fc5749;
+  border-color: #fb2917;
   color: white;
   cursor: default;
   opacity: 0.6;
@@ -2172,7 +2172,7 @@ button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[d
 }
 /* line 121, ../sass/foundation/components/_buttons.scss */
 button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
-  background-color: #970b0e;
+  background-color: #fb2917;
 }
 /* line 132, ../sass/foundation/components/_buttons.scss */
 button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
@@ -2180,7 +2180,7 @@ button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert
 }
 /* line 145, ../sass/foundation/components/_buttons.scss */
 button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
-  background-color: #c60f13;
+  background-color: #fc5749;
 }
 
 /* line 195, ../sass/foundation/components/_buttons.scss */
@@ -2207,16 +2207,16 @@ button.large, .button.large {
 @media only screen {
   /* line 205, ../sass/foundation/components/_buttons.scss */
   button, .button {
-    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 0 0 rgba(255, 255, 255, 0.5) inset;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.5) inset;
     -webkit-transition: background-color 300ms ease-out;
     -moz-transition: background-color 300ms ease-out;
     transition: background-color 300ms ease-out;
   }
   /* line 68, ../sass/foundation/components/_global.scss */
   button:active, .button:active {
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset;
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2) inset;
   }
   /* line 213, ../sass/foundation/components/_buttons.scss */
   button.radius, .button.radius {
@@ -2583,8 +2583,8 @@ fieldset legend {
 input.error,
 .error textarea,
 textarea.error {
-  border-color: #c60f13;
-  background-color: rgba(198, 15, 19, 0.1);
+  border-color: #fc5749;
+  background-color: rgba(252, 87, 73, 0.1);
 }
 /* line 230, ../sass/foundation/components/_forms.scss */
 .error input:focus,
@@ -2598,7 +2598,7 @@ textarea.error:focus {
 /* line 358, ../sass/foundation/components/_forms.scss */
 .error label,
 label.error {
-  color: #c60f13;
+  color: #fc5749;
 }
 
 /* line 361, ../sass/foundation/components/_forms.scss */
@@ -2610,7 +2610,7 @@ small.error {
   margin-bottom: 1em;
   font-size: 0.75em;
   font-weight: bold;
-  background: #c60f13;
+  background: #fc5749;
   color: white;
 }
 
@@ -3110,7 +3110,7 @@ form.custom .custom.disabled {
 }
 /* line 79, ../sass/foundation/components/_split-buttons.scss */
 .split.button span {
-  border-left-color: #1e728c;
+  border-left-color: #006159;
 }
 /* line 116, ../sass/foundation/components/_split-buttons.scss */
 .split.button span {
@@ -3129,7 +3129,7 @@ form.custom .custom.disabled {
 }
 /* line 79, ../sass/foundation/components/_split-buttons.scss */
 .split.button.secondary span {
-  border-left-color: #c3c3c3;
+  border-left-color: #fbc809;
 }
 /* line 142, ../sass/foundation/components/_split-buttons.scss */
 .split.button.secondary span:before {
@@ -3137,11 +3137,11 @@ form.custom .custom.disabled {
 }
 /* line 79, ../sass/foundation/components/_split-buttons.scss */
 .split.button.alert span {
-  border-left-color: #7f0a0c;
+  border-left-color: #f41704;
 }
 /* line 79, ../sass/foundation/components/_split-buttons.scss */
 .split.button.success span {
-  border-left-color: #396516;
+  border-left-color: #699737;
 }
 /* line 156, ../sass/foundation/components/_split-buttons.scss */
 .split.button.tiny {
@@ -4068,36 +4068,36 @@ form.custom .custom.disabled {
 }
 /* line 252, ../sass/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button {
-  background: #2ba6cb;
+  background: #00ad9f;
   font-size: 0.8125em;
 }
 /* line 255, ../sass/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.hover {
-  background: #2284a1;
+  background: #007a70;
 }
 /* line 259, ../sass/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.secondary {
-  background: #e9e9e9;
+  background: #fcd954;
 }
 /* line 261, ../sass/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.secondary.hover {
-  background: #d0d0d0;
+  background: #fbce22;
 }
 /* line 265, ../sass/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.success {
-  background: #5da423;
+  background: #8fc258;
 }
 /* line 267, ../sass/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.success.hover {
-  background: #457a1a;
+  background: #76a93e;
 }
 /* line 271, ../sass/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.alert {
-  background: #c60f13;
+  background: #fc5749;
 }
 /* line 273, ../sass/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.alert.hover {
-  background: #970b0e;
+  background: #fb2917;
 }
 /* line 281, ../sass/foundation/components/_top-bar.scss */
 .top-bar-section ul li.active > a {
@@ -5185,8 +5185,8 @@ form.custom .custom.disabled {
   position: relative;
   padding: 0.6875em 1.3125em 0.75em 0.6875em;
   font-size: 0.875em;
-  background-color: #2ba6cb;
-  border-color: #2284a1;
+  background-color: #00ad9f;
+  border-color: #007a70;
   color: white;
 }
 /* line 97, ../sass/foundation/components/_alert-boxes.scss */
@@ -5216,21 +5216,21 @@ form.custom .custom.disabled {
 }
 /* line 102, ../sass/foundation/components/_alert-boxes.scss */
 .alert-box.success {
-  background-color: #5da423;
-  border-color: #457a1a;
+  background-color: #8fc258;
+  border-color: #76a93e;
   color: white;
 }
 /* line 103, ../sass/foundation/components/_alert-boxes.scss */
 .alert-box.alert {
-  background-color: #c60f13;
-  border-color: #970b0e;
+  background-color: #fc5749;
+  border-color: #fb2917;
   color: white;
 }
 /* line 104, ../sass/foundation/components/_alert-boxes.scss */
 .alert-box.secondary {
-  background-color: #e9e9e9;
-  border-color: #d0d0d0;
-  color: #505050;
+  background-color: #fcd954;
+  border-color: #fbce22;
+  color: white;
 }
 
 /* Breadcrumbs */
@@ -5243,8 +5243,8 @@ form.custom .custom.disabled {
   list-style: none;
   border-style: solid;
   border-width: 1px;
-  background-color: #f6f6f6;
-  border-color: gainsboro;
+  background-color: #fcdf6d;
+  border-color: #fcd33b;
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
@@ -5254,7 +5254,7 @@ form.custom .custom.disabled {
   float: left;
   font-size: 0.6875em;
   text-transform: uppercase;
-  color: #2ba6cb;
+  color: #00ad9f;
 }
 /* line 61, ../sass/foundation/components/_breadcrumbs.scss */
 .breadcrumbs > *:hover a, .breadcrumbs > *:focus a {
@@ -5264,7 +5264,7 @@ form.custom .custom.disabled {
 .breadcrumbs > * a,
 .breadcrumbs > * span {
   text-transform: uppercase;
-  color: #2ba6cb;
+  color: #00ad9f;
 }
 /* line 70, ../sass/foundation/components/_breadcrumbs.scss */
 .breadcrumbs > *.current {
@@ -5338,7 +5338,7 @@ kbd {
   position: relative;
   padding: 0.1875em 0.625em 0.25em;
   font-size: 0.875em;
-  background-color: #2ba6cb;
+  background-color: #00ad9f;
   color: white;
 }
 /* line 77, ../sass/foundation/components/_labels.scss */
@@ -5353,18 +5353,18 @@ kbd {
 }
 /* line 80, ../sass/foundation/components/_labels.scss */
 .label.alert {
-  background-color: #c60f13;
+  background-color: #fc5749;
   color: white;
 }
 /* line 81, ../sass/foundation/components/_labels.scss */
 .label.success {
-  background-color: #5da423;
+  background-color: #8fc258;
   color: white;
 }
 /* line 82, ../sass/foundation/components/_labels.scss */
 .label.secondary {
-  background-color: #e9e9e9;
-  color: #333333;
+  background-color: #fcd954;
+  color: white;
 }
 
 /* Inline Lists */
@@ -5427,14 +5427,14 @@ kbd {
 }
 /* line 70, ../sass/foundation/components/_pagination.scss */
 .pagination li.current a {
-  background: #2ba6cb;
+  background: #00ad9f;
   color: white;
   font-weight: bold;
   cursor: default;
 }
 /* line 77, ../sass/foundation/components/_pagination.scss */
 .pagination li.current a:hover, .pagination li.current a:focus {
-  background: #2ba6cb;
+  background: #00ad9f;
 }
 
 /* line 83, ../sass/foundation/components/_pagination.scss */
@@ -5482,12 +5482,12 @@ kbd {
 .panel.callout {
   border-style: solid;
   border-width: 1px;
-  border-color: #2284a1;
+  border-color: #007a70;
   margin-bottom: 1.25em;
   padding: 1.25em;
-  background: #2ba6cb;
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  background: #00ad9f;
+  -webkit-box-shadow: 0 0 0 rgba(255, 255, 255, 0.5) inset;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.5) inset;
 }
 /* line 45, ../sass/foundation/components/_panels.scss */
 .panel.callout h1, .panel.callout h2, .panel.callout h3, .panel.callout h4, .panel.callout h5, .panel.callout h6, .panel.callout p {
@@ -5585,25 +5585,25 @@ kbd {
 }
 /* line 54, ../sass/foundation/components/_progress-bars.scss */
 .progress .meter {
-  background: #2ba6cb;
+  background: #00ad9f;
   height: 100%;
   display: block;
 }
 /* line 57, ../sass/foundation/components/_progress-bars.scss */
 .progress.secondary .meter {
-  background: #e9e9e9;
+  background: #fcd954;
   height: 100%;
   display: block;
 }
 /* line 58, ../sass/foundation/components/_progress-bars.scss */
 .progress.success .meter {
-  background: #5da423;
+  background: #8fc258;
   height: 100%;
   display: block;
 }
 /* line 59, ../sass/foundation/components/_progress-bars.scss */
 .progress.alert .meter {
-  background: #c60f13;
+  background: #fc5749;
   height: 100%;
   display: block;
 }
@@ -5645,7 +5645,7 @@ kbd {
 /* line 43, ../sass/foundation/components/_side-nav.scss */
 .side-nav li a {
   display: block;
-  color: #2ba6cb;
+  color: #00ad9f;
 }
 /* line 48, ../sass/foundation/components/_side-nav.scss */
 .side-nav li.active > a:first-child {
@@ -5694,7 +5694,7 @@ kbd {
   -webkit-border-radius: 1000px;
   border-radius: 1000px;
   font-weight: bold;
-  background: #2ba6cb;
+  background: #00ad9f;
   padding: 0.1875em 0.5625em;
   cursor: default;
   color: white;
@@ -5822,8 +5822,8 @@ kbd {
     background: -moz-linear-gradient(top, white 0%, #f2f2f2 100%);
     background: -webkit-linear-gradient(top, white 0%, #f2f2f2 100%);
     background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
-    -webkit-box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.07), 1000px 0 0 1000px #e1f5d1, -2px 0 10px 0 rgba(0, 0, 0, 0.07), -1000px 0 0 1000px whitesmoke;
-    box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.07), 1000px 0 0 980px #e1f5d1, -2px 0 10px 0 rgba(0, 0, 0, 0.07), -1000px 0 0 1000px whitesmoke;
+    -webkit-box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.07), 1000px 0 0 1000px white, -2px 0 10px 0 rgba(0, 0, 0, 0.07), -1000px 0 0 1000px whitesmoke;
+    box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.07), 1000px 0 0 980px white, -2px 0 10px 0 rgba(0, 0, 0, 0.07), -1000px 0 0 1000px whitesmoke;
   }
   /* line 191, ../sass/foundation/components/_switch.scss */
   div.switch:hover > span, div.switch:focus > span {
@@ -6007,8 +6007,8 @@ table tfoot tr td {
 }
 /* line 32, ../sass/foundation/components/_thumbs.scss */
 .th:hover, .th:focus {
-  -webkit-box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5);
-  box-shadow: 0 0 6px 1px rgba(43, 166, 203, 0.5);
+  -webkit-box-shadow: 0 0 6px 1px rgba(0, 173, 159, 0.5);
+  box-shadow: 0 0 6px 1px rgba(0, 173, 159, 0.5);
 }
 /* line 49, ../sass/foundation/components/_thumbs.scss */
 .th.radius {
@@ -6031,8 +6031,8 @@ a.th {
 }
 /* line 36, ../sass/foundation/components/_tooltips.scss */
 .has-tip:hover, .has-tip:focus {
-  border-bottom: dotted 1px #196177;
-  color: #2ba6cb;
+  border-bottom: dotted 1px #004741;
+  color: #00ad9f;
 }
 /* line 42, ../sass/foundation/components/_tooltips.scss */
 .has-tip.tip-left, .has-tip.tip-right {
@@ -6069,8 +6069,8 @@ a.th {
 }
 /* line 71, ../sass/foundation/components/_tooltips.scss */
 .tooltip.opened {
-  color: #2ba6cb !important;
-  border-bottom: dotted 1px #196177 !important;
+  color: #00ad9f !important;
+  border-bottom: dotted 1px #004741 !important;
 }
 
 /* line 77, ../sass/foundation/components/_tooltips.scss */
@@ -6242,6 +6242,16 @@ a.th {
 
 /* Ali's SCSS */
 /* line 3, ../sass/_app.scss */
+body {
+  background: #fde486;
+}
+
+/* line 7, ../sass/_app.scss */
+.page {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* line 11, ../sass/_app.scss */
 .modal-backdrop {
   position: absolute;
   top: 0;
@@ -6251,20 +6261,74 @@ a.th {
   height: 100%;
 }
 
-/* line 12, ../sass/_app.scss */
+/* line 20, ../sass/_app.scss */
 .modal {
   position: absolute;
   z-index: 1050;
   top: 50px;
 }
 
-/* line 18, ../sass/_app.scss */
+/* line 26, ../sass/_app.scss */
 .modal-content {
   background: white;
   width: 80%;
   padding: 1.25em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   margin: 0 auto;
+}
+
+/* line 35, ../sass/_app.scss */
+.modal .row {
+  max-width: 100%;
+}
+
+/* line 39, ../sass/_app.scss */
+.close {
+  background: #fc5749;
+  border-color: #a91003;
+}
+/* line 43, ../sass/_app.scss */
+.close:hover {
+  background: #db1404;
+}
+
+/* line 48, ../sass/_app.scss */
+.complete {
+  background: #8fc258;
+  border-color: #425e23;
+}
+/* line 52, ../sass/_app.scss */
+.complete:hover {
+  background: #5c8430;
+}
+
+/* line 58, ../sass/_app.scss */
+.sub-heading {
+  color: #697c8b;
+  font-size: 2em;
+}
+
+/* line 62, ../sass/_app.scss */
+.icon-star-o {
+  color: #3d4851;
+}
+
+/* line 65, ../sass/_app.scss */
+.icon-star {
+  color: #fcd954;
+}
+
+/* line 69, ../sass/_app.scss */
+.menu {
+  list-style: none;
+  margin-left: 0;
+  font-size: 1.5em;
+}
+
+/* line 75, ../sass/_app.scss */
+.intro {
+  font-size: 1.5em;
+  color: #3d4851;
 }
 
 @font-face {

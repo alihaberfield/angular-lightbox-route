@@ -36,14 +36,24 @@
 
 <div class="row">
 
-    <div class="large-12 columns" role="content" ng-controller="MenuCtrl">
+    <div class="large-12 columns page" role="content" ng-controller="MenuCtrl">
 
-            <h2>{{ message }}</h2>
+        <h1>GoldStars Goal Tracker</h1>
+        <p class="sub-heading">Today's progress:<br/>
+            <span ng-repeat="card in cards | orderBy:'input'" ng-class="{'icon-star': card.input, 'icon-star-o': !card.input}">
+            </span>
+        </p>
 
-            <li ng-repeat="card in cards" class="icon-pagelines">
-                <a href="#/card/{{ card.shortName }}" class="button expand">{{ card.shortName }} </a>
+        <p class="intro">Enter your activity into your goals to make progress!</p>
+
+        <ul class="menu">
+            <li ng-repeat="card in cards">
+                <a href="#/card/{{ card.shortName }}" ng-class="{'complete': card.input, 'icon-leaf' : !card.input, 'icon-check': card.input}" class="button expand card-{{ card.shortName}}">
+                    <span ng-if="!card.input">{{ card.menuText }}</span>
+                    <span ng-if="card.input">{{ card.input }} {{ card.recordMessage }}</span>
+                </a>
             </li>
-
+        </ul>
 
 
 

@@ -2,7 +2,6 @@ angular.module('myApp.modal', ['ngRoute'])
 
     .controller('ModalContainerCtrl',['$scope', '$modal', '$route', '$location', function($scope, $modal, $route, $location) {
 
-        console.log("this is ModalContainerCtrl");
 
         var modalInstance = $modal.open({
             templateUrl : '../assets/templates/modal.html',
@@ -15,6 +14,13 @@ angular.module('myApp.modal', ['ngRoute'])
         $scope.$on("$locationChangeStart", function (event, nextLocation, currentLocation) {
             modalInstance.close();
         });
+
+        //When modal overlay is clicked, return to menu
+        $scope.close = function () {
+            console.log("ModalContainer close")
+            $modalInstance.dismiss();
+            $location.path('/menu');
+        };
 
     }])
     .controller('ModalCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
@@ -36,8 +42,6 @@ angular.module('myApp.modal', ['ngRoute'])
         $scope.TrustDangerousSnippet = function(post) {
             return $sce.trustAsHtml(post);
         };
-
-
 
 
     }]);

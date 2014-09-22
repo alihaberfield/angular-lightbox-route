@@ -1,5 +1,13 @@
 /* Ali's SCSS */
 
+body {
+  background: lighten($secondary-color, 10%);
+}
+
+.page {
+  background: rgba(255,255,255,0.8);
+}
+
 .modal-backdrop {
   position: absolute;
   top: 0;
@@ -22,4 +30,49 @@
   box-shadow: $reveal-box-shadow;
   margin: 0 auto;
 
+}
+
+.modal .row {
+  max-width: 100%;
+}
+
+.close {
+  background: $alert-color;
+  border-color: darken($alert-color, 30%);
+
+  &:hover {
+    background: darken($alert-color, 20%);
+  }
+}
+
+.complete {
+  background: $success-color;
+  border-color: darken($success-color, 30%);
+
+  &:hover {
+    background: darken($success-color, 20%);
+  }
+}
+
+
+.sub-heading {
+  color: lighten($dark-grey, 20%);
+  font-size:2em;
+}
+.icon-star-o {
+  color: $dark-grey;
+}
+.icon-star {
+  color: $secondary-color;
+}
+
+.menu {
+  list-style: none;
+  margin-left: 0;
+  font-size:1.5em;
+}
+
+.intro {
+  font-size: 1.5em;
+  color: $dark-grey;
 }
