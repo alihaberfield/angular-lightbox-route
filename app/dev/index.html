@@ -15,7 +15,9 @@
 
     <link rel="stylesheet" href="../assets/css/styles.css"/>
 
-  <script src="../assets/lib/js/modernizr-2.6.2.min.js"></script>
+
+
+    <script src="../assets/lib/js/modernizr-2.6.2.min.js"></script>
 
 
 
@@ -26,37 +28,37 @@
 
 <div class="row">
 
+
     <div class="large-12 columns page" role="content" ng-controller="MenuCtrl">
 
         <h1>GoldStars Goal Tracker</h1>
-        <p class="sub-heading">Today's progress:<br/>
-            <span ng-repeat="card in cards | orderBy:'input'" ng-class="{'icon-star': card.input, 'icon-star-o': !card.input}">
+
+        <div ng-repeat="category in categories">
+            <p class="sub-heading">Today's {{ category.shortName }} progress:
+                <span ng-repeat="activity in category.activities | orderBy:'input'" ng-class="{'icon-star': sport.input, 'icon-star-o': !sport.input}">
+                </span>
+            </p>
+
+
+
+            <a href="#/cat/{{ category.shortName }}/" class="button expand">
+            <span class="left icon-{{ category.shortName }}">
+                {{ category.callToAct }}
             </span>
-        </p>
+            </a>
 
-        <p class="intro">Enter your activity into your goals to make progress:</p>
+        </div>
 
-        <ul class="menu">
-            <li ng-repeat="card in cards" ng-class="{'complete': card.input}" class="button expand card-{{ card.shortName}}">
-                <a href="#/card/{{ card.shortName }}">
-                <span class="left" ng-class="{'icon-clock-o' : !card.input, 'icon-check': card.input}"></span>
-
-                    <span ng-if="!card.input">{{ card.menuText }}</span>
-                    <span ng-if="card.input">{{ card.input }} {{ card.recordMessage }}</span>
-                </a>
-            </li>
-        </ul>
-
+        <script type="text/ng-template" id="modalContainer">
+        </script>
 
 
     </div>
 
 
-    <script type="text/ng-template" id="modalContainer">
-    </script>
+
 
 </div>
-
 
 
 
@@ -76,7 +78,6 @@
     <script src="../assets/js/modules/service.js"></script>
     <script src="../assets/js/modules/menu.js"></script>
     <script src="../assets/js/modules/modal.js"></script>
-    <script src="../assets/js/modules/modal.jquery.js"></script>
 
 </body>
 </html>

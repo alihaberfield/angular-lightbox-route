@@ -53,21 +53,21 @@ angular.module('myApp.services', [])
         }
 
 
-        function getJSON() {
-            var request = $http({
+        function getJSON(activity) {
+            var url = "../assets/json/" + activity + ".json",
+                request = $http({
                 method: "get",
                 dataType: 'jsonp',
-                url: "../assets/json/activities.json",
+                url: url,
                 params: {
                     action: "get"
                 }
+
             });
 
-            if (!cards) {
-                return( request.then( handleSuccess, handleError ) );
-            } else {
-                return cards;
-            }
+
+
+            return( request.then( handleSuccess, handleError ) );
 
         }
 

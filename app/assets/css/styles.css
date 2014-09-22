@@ -6467,16 +6467,46 @@ body {
 }
 
 /* line 56, ../sass/_font.scss */
+.icon-trophy:before, .icon-sports:before {
+  content: "\f091";
+}
+
+/* line 59, ../sass/_font.scss */
+.icon-doctor:before {
+  content: "\f0f1";
+}
+
+/* line 62, ../sass/_font.scss */
+.icon-suitcase:before, .icon-goals:before {
+  content: "\f0f2";
+}
+
+/* line 65, ../sass/_font.scss */
+.icon-drink:before {
+  content: "\f0f4";
+}
+
+/* line 68, ../sass/_font.scss */
+.icon-meal:before {
+  content: "\f0f5";
+}
+
+/* line 71, ../sass/_font.scss */
+.icon-todo:before {
+  content: "\f140";
+}
+
+/* line 74, ../sass/_font.scss */
 .icon-pagelines:before {
   content: "\f18c";
 }
 
-/* line 59, ../sass/_font.scss */
+/* line 77, ../sass/_font.scss */
 .icon-child:before {
   content: "\f1ae";
 }
 
-/* line 62, ../sass/_font.scss */
+/* line 80, ../sass/_font.scss */
 .icon-books:before {
   content: "\e600";
 }

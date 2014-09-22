@@ -1,10 +1,9 @@
 angular.module('myApp.modal', ['ngRoute'])
 
-    .controller('ModalContainerCtrl',['$scope', '$modal', '$route', '$location', function($scope, $modal, $route, $location) {
-
+    .controller('ModalCategoryCtrl',['$scope', '$modal', '$route', '$location', function($scope, $modal, $route, $location) {
 
         var modalInstance = $modal.open({
-            templateUrl : '../assets/templates/modal.html',
+            templateUrl : '../assets/templates/modal-category.html',
             controller: 'ModalCtrl'
         });
 
@@ -22,6 +21,11 @@ angular.module('myApp.modal', ['ngRoute'])
         };
 
     }])
+    .controller('ModalDetailCtrl', ['$scope', function($scope) {
+
+        console.log("Modal Detail Control");
+
+    }])
     .controller('ModalCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
 
 
@@ -30,6 +34,8 @@ angular.module('myApp.modal', ['ngRoute'])
             $modalInstance.dismiss();
             $location.path('/menu');
         };
+
+        $scope.category = "Test category name";
 
         $scope.activity = $route.current.pathParams.name;
 

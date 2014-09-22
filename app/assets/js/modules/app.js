@@ -10,9 +10,13 @@ angular.module('myApp', [
 ])
 .config(function($routeProvider) {
     $routeProvider
-        .when('/card/:name', {
+        .when('/cat/:catname', {
             templateUrl : 'modalContainer',
-            controller : 'ModalContainerCtrl'
+            controller : 'ModalCategoryCtrl'
+        })
+        .when('/cat/:catname/card/:name', {
+            templateUrl : 'modalContainer',
+            controller : 'ModalDetailCtrl'
         })
         .when('/menu', {
             controller : 'MenuCtrl'
