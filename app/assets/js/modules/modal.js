@@ -2,6 +2,8 @@ angular.module('myApp.modal', ['ngRoute'])
 
     .controller('ModalContainerCtrl',['$scope', '$modal', '$route', '$location', function($scope, $modal, $route, $location) {
 
+        console.log("this is ModalContainerCtrl");
+
         var modalInstance = $modal.open({
             templateUrl : '../assets/templates/modal.html',
             controller: 'ModalCtrl'

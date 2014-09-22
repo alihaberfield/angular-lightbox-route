@@ -28,13 +28,13 @@
 
     <div class="large-12 columns" role="content" ng-controller="MenuCtrl">
 
-        <article>
+            <h2>{{ message }}</h2>
 
             <li ng-repeat="card in cards" class="icon-pagelines">
                 <a href="#/card/{{ card.shortName }}" class="button expand">{{ card.shortName }} </a>
             </li>
 
-        </article>
+
 
 
     </div>
