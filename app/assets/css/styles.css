@@ -1722,9 +1722,10 @@ a:hover {
 .page {
   background: #FFF;
   background: rgba(255, 255, 255, 0.8);
+  height: 100%;
 }
 
-/* line 20, ../sass/_app.scss */
+/* line 21, ../sass/_app.scss */
 .modal-backdrop {
   position: absolute;
   top: 0;
@@ -1734,14 +1735,14 @@ a:hover {
   height: 100%;
 }
 
-/* line 29, ../sass/_app.scss */
+/* line 30, ../sass/_app.scss */
 .modal {
   position: absolute;
   z-index: 1050;
   top: 50px;
 }
 
-/* line 36, ../sass/_app.scss */
+/* line 37, ../sass/_app.scss */
 .modal-content {
   background: white;
   width: 80%;
@@ -1750,118 +1751,118 @@ a:hover {
   border: 1px solid #3d4851;
 }
 
-/* line 44, ../sass/_app.scss */
+/* line 45, ../sass/_app.scss */
 .modal-header, .modal-body {
   padding: 1.25em;
 }
 
-/* line 48, ../sass/_app.scss */
+/* line 49, ../sass/_app.scss */
 .title {
   text-align: center;
 }
 
-/* line 52, ../sass/_app.scss */
+/* line 53, ../sass/_app.scss */
 .modal-header {
   border-bottom: 1px solid #a1aeb9;
   background: #e0fffc;
 }
-/* line 56, ../sass/_app.scss */
+/* line 57, ../sass/_app.scss */
 .modal-header h1 {
   padding: 0.5em;
 }
 @media only screen and (min-width: 1280px) {
-  /* line 56, ../sass/_app.scss */
+  /* line 57, ../sass/_app.scss */
   .modal-header h1 {
     margin: 1em 4em;
   }
 }
 @media only screen and (min-width: 768px) {
-  /* line 56, ../sass/_app.scss */
+  /* line 57, ../sass/_app.scss */
   .modal-header h1 {
     background: #00ad9f;
   }
 }
 @media only screen and (max-width: 768px) {
-  /* line 69, ../sass/_app.scss */
+  /* line 70, ../sass/_app.scss */
   .modal-header .columns {
     width: 100%;
   }
 }
 
-/* line 74, ../sass/_app.scss */
+/* line 75, ../sass/_app.scss */
 .modal .row {
   max-width: 100%;
 }
 
-/* line 78, ../sass/_app.scss */
+/* line 79, ../sass/_app.scss */
 .close {
   background: #fc5749;
   border-color: #a91003;
 }
-/* line 82, ../sass/_app.scss */
+/* line 83, ../sass/_app.scss */
 .close:hover {
   background: #db1404;
 }
 
-/* line 87, ../sass/_app.scss */
+/* line 88, ../sass/_app.scss */
 .complete {
   background: #8fc258;
   border-color: #425e23;
 }
-/* line 91, ../sass/_app.scss */
+/* line 92, ../sass/_app.scss */
 .complete:hover {
   background: #5c8430;
 }
-/* line 95, ../sass/_app.scss */
+/* line 96, ../sass/_app.scss */
 .complete:before {
   font-size: 2em;
 }
 
-/* line 101, ../sass/_app.scss */
+/* line 102, ../sass/_app.scss */
 .sub-heading {
   color: #697c8b;
   font-size: 2em;
 }
 
-/* line 105, ../sass/_app.scss */
+/* line 106, ../sass/_app.scss */
 .icon-star-o {
   color: #3d4851;
 }
 
-/* line 108, ../sass/_app.scss */
+/* line 109, ../sass/_app.scss */
 .icon-star {
   color: #fcd954;
 }
 
-/* line 113, ../sass/_app.scss */
+/* line 114, ../sass/_app.scss */
 .menu {
   list-style: none;
   margin-left: 0;
   font-size: 1.5em;
 }
-/* line 118, ../sass/_app.scss */
+/* line 119, ../sass/_app.scss */
 .menu a {
   display: block;
   padding: 1em;
   color: #fff;
 }
-/* line 123, ../sass/_app.scss */
+/* line 124, ../sass/_app.scss */
 .menu a:hover {
   color: #fff;
 }
-/* line 128, ../sass/_app.scss */
+/* line 129, ../sass/_app.scss */
 .menu .button {
   padding: 0;
 }
 
-/* line 133, ../sass/_app.scss */
+/* line 134, ../sass/_app.scss */
 .intro {
   font-size: 1.5em;
   color: #3d4851;
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 140, ../sass/_app.scss */
+  /* line 141, ../sass/_app.scss */
   .prev, .next {
     width: 50%;
   }
@@ -1944,61 +1945,61 @@ a:hover {
 }
 
 /* line 59, ../sass/_font.scss */
-<<<<<<< HEAD
 .icon-doctor:before {
-=======
-.icon-stethoscope:before {
->>>>>>> feature/categories
   content: "\f0f1";
 }
 
 /* line 62, ../sass/_font.scss */
-<<<<<<< HEAD
 .icon-suitcase:before, .icon-goals:before {
-=======
-.icon-suitcase:before, .icon-todo:before {
->>>>>>> feature/categories
   content: "\f0f2";
 }
 
 /* line 65, ../sass/_font.scss */
-<<<<<<< HEAD
 .icon-drink:before {
-=======
-.icon-coffee:before {
->>>>>>> feature/categories
   content: "\f0f4";
 }
 
 /* line 68, ../sass/_font.scss */
-<<<<<<< HEAD
 .icon-meal:before {
-=======
-.icon-cutlery:before {
->>>>>>> feature/categories
   content: "\f0f5";
 }
 
 /* line 71, ../sass/_font.scss */
-<<<<<<< HEAD
-.icon-todo:before {
-=======
-.icon-bullseye:before {
->>>>>>> feature/categories
-  content: "\f140";
+.icon-stethoscope:before {
+  content: "\f0f1";
 }
 
 /* line 74, ../sass/_font.scss */
+.icon-suitcase:before, .icon-todo:before {
+  content: "\f0f2";
+}
+
+/* line 77, ../sass/_font.scss */
+.icon-coffee:before {
+  content: "\f0f4";
+}
+
+/* line 80, ../sass/_font.scss */
+.icon-cutlery:before {
+  content: "\f0f5";
+}
+
+/* line 83, ../sass/_font.scss */
+.icon-bullseye:before, .icon-goals:before {
+  content: "\f140";
+}
+
+/* line 86, ../sass/_font.scss */
 .icon-pagelines:before {
   content: "\f18c";
 }
 
-/* line 77, ../sass/_font.scss */
+/* line 89, ../sass/_font.scss */
 .icon-child:before {
   content: "\f1ae";
 }
 
-/* line 80, ../sass/_font.scss */
+/* line 92, ../sass/_font.scss */
 .icon-books:before {
   content: "\e600";
 }
