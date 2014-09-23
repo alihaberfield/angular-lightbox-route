@@ -18,6 +18,9 @@ a {
   height: 100%;
 }
 
+
+
+
 .modal-backdrop {
   position: absolute;
   top: 0;
@@ -56,7 +59,7 @@ a {
 
   h1 {
     @media #{$medium} {
-      margin: 1em 4em;
+      margin: 0 4em 0.5em 4em;
     }
     @media #{$small} {
       background: $primary-color;
@@ -71,6 +74,9 @@ a {
   }
 }
 
+input[type="checkbox"] {
+  margin: 1em 0;
+}
 
 .modal .row {
   max-width: 100%;
@@ -114,20 +120,24 @@ a {
 .menu {
   list-style: none;
   margin-left: 0;
-  font-size:1.5em;
 
   a {
     display:block;
-    padding: 1em;
     color: #fff;
 
     &:hover {
       color: #fff;
     }
   }
+  .button.expand {
+    line-height: 1.5em;
+    padding: 0.5em;
+    font-size:1.5em;
 
-  .button {
-    padding: 0;
+    .left {
+      margin-left:0.5em;
+      font-size:1.5em;
+    }
   }
 }
 

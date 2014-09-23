@@ -1725,7 +1725,7 @@ a:hover {
   height: 100%;
 }
 
-/* line 21, ../sass/_app.scss */
+/* line 24, ../sass/_app.scss */
 .modal-backdrop {
   position: absolute;
   top: 0;
@@ -1735,14 +1735,14 @@ a:hover {
   height: 100%;
 }
 
-/* line 30, ../sass/_app.scss */
+/* line 33, ../sass/_app.scss */
 .modal {
   position: absolute;
   z-index: 1050;
   top: 50px;
 }
 
-/* line 37, ../sass/_app.scss */
+/* line 40, ../sass/_app.scss */
 .modal-content {
   background: white;
   width: 80%;
@@ -1751,118 +1751,128 @@ a:hover {
   border: 1px solid #3d4851;
 }
 
-/* line 45, ../sass/_app.scss */
+/* line 48, ../sass/_app.scss */
 .modal-header, .modal-body {
   padding: 1.25em;
 }
 
-/* line 49, ../sass/_app.scss */
+/* line 52, ../sass/_app.scss */
 .title {
   text-align: center;
 }
 
-/* line 53, ../sass/_app.scss */
+/* line 56, ../sass/_app.scss */
 .modal-header {
   border-bottom: 1px solid #a1aeb9;
   background: #e0fffc;
 }
-/* line 57, ../sass/_app.scss */
+/* line 60, ../sass/_app.scss */
 .modal-header h1 {
   padding: 0.5em;
 }
 @media only screen and (min-width: 1280px) {
-  /* line 57, ../sass/_app.scss */
+  /* line 60, ../sass/_app.scss */
   .modal-header h1 {
-    margin: 1em 4em;
+    margin: 0 4em 0.5em 4em;
   }
 }
 @media only screen and (min-width: 768px) {
-  /* line 57, ../sass/_app.scss */
+  /* line 60, ../sass/_app.scss */
   .modal-header h1 {
     background: #00ad9f;
   }
 }
 @media only screen and (max-width: 768px) {
-  /* line 70, ../sass/_app.scss */
+  /* line 73, ../sass/_app.scss */
   .modal-header .columns {
     width: 100%;
   }
 }
 
-/* line 75, ../sass/_app.scss */
+/* line 77, ../sass/_app.scss */
+input[type="checkbox"] {
+  margin: 1em 0;
+}
+
+/* line 81, ../sass/_app.scss */
 .modal .row {
   max-width: 100%;
 }
 
-/* line 79, ../sass/_app.scss */
+/* line 85, ../sass/_app.scss */
 .close {
   background: #fc5749;
   border-color: #a91003;
 }
-/* line 83, ../sass/_app.scss */
+/* line 89, ../sass/_app.scss */
 .close:hover {
   background: #db1404;
 }
 
-/* line 88, ../sass/_app.scss */
+/* line 94, ../sass/_app.scss */
 .complete {
   background: #8fc258;
   border-color: #425e23;
 }
-/* line 92, ../sass/_app.scss */
+/* line 98, ../sass/_app.scss */
 .complete:hover {
   background: #5c8430;
 }
-/* line 96, ../sass/_app.scss */
+/* line 102, ../sass/_app.scss */
 .complete:before {
   font-size: 2em;
 }
 
-/* line 102, ../sass/_app.scss */
+/* line 108, ../sass/_app.scss */
 .sub-heading {
   color: #697c8b;
   font-size: 2em;
 }
 
-/* line 106, ../sass/_app.scss */
+/* line 112, ../sass/_app.scss */
 .icon-star-o {
   color: #3d4851;
 }
 
-/* line 109, ../sass/_app.scss */
+/* line 115, ../sass/_app.scss */
 .icon-star {
   color: #fcd954;
 }
 
-/* line 114, ../sass/_app.scss */
+/* line 120, ../sass/_app.scss */
 .menu {
   list-style: none;
   margin-left: 0;
-  font-size: 1.5em;
-}
-/* line 119, ../sass/_app.scss */
-.menu a {
-  display: block;
-  padding: 1em;
-  color: #fff;
 }
 /* line 124, ../sass/_app.scss */
+.menu a {
+  display: block;
+  color: #fff;
+}
+/* line 128, ../sass/_app.scss */
 .menu a:hover {
   color: #fff;
 }
-/* line 129, ../sass/_app.scss */
-.menu .button {
-  padding: 0;
+/* line 132, ../sass/_app.scss */
+.menu .button.expand {
+  line-height: 1.5em;
+  padding: 0.5em;
+  font-size: 1.5em;
+}
+/* line 137, ../sass/_app.scss */
+.menu .button.expand .left {
+  margin-left: 0.5em;
+  font-size: 1.5em;
 }
 
-/* line 134, ../sass/_app.scss */
+/* line 144, ../sass/_app.scss */
 .intro {
   font-size: 1.5em;
   color: #3d4851;
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 141, ../sass/_app.scss */
+  /* line 151, ../sass/_app.scss */
   .prev, .next {
     width: 50%;
   }
