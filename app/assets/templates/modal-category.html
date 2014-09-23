@@ -1,0 +1,44 @@
+<div class="modal-content">
+
+
+    <div class="modal-header">
+        <div class="row">
+                <button href="#" aria-label="Close" class="button close icon-times right" ng-click="close()"></button>
+        </div>
+        <div class="row title">
+            <div class="columns large-12">
+                <h1> {{ category.longName }} </h1>
+                <h2><span ng-repeat="activity in category.activities | orderBy:'input'" ng-class="{'icon-star': activity.input, 'icon-star-o': !activity.input}">
+                </span></h2>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal-body">
+
+
+        <p class="intro">Enter your activities to make progress:</p>
+
+        <ul class="menu">
+            <li ng-repeat="activity in category.activities" ng-class="{'complete': activity.input}" class="button expand">
+                <a href="#/cat/{{ category.shortName }}/card/{{ activity.shortName }}/">
+                    <span class="left" ng-class="{'icon-clock-o' : !activity.input, 'icon-check': activity.input}"></span>
+
+                    <span ng-if="!activity.input">{{ activity.menuText }}</span>
+                    <span ng-if="activity.input"><span ng-if="activity.unit">{{ activity.input }}</span> {{ activity.recordMessage }}</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="row">
+            <div class="columns large-6 prev"><a href="#/cat/{{ prev }}" aria-label="Previous category: {{ prev }}" class="button icon-arrow-left"></a></div>
+            <div class="columns large-6 next"><a href="#/cat/{{ next }}" aria-label="Next category: {{ next }}" class="button right icon-arrow-right"></a></div>
+        </div>
+
+
+    </div>
+
+
+</div>

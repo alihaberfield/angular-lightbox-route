@@ -4,9 +4,18 @@ body {
   background: lighten($secondary-color, 10%);
 }
 
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .page {
   background: #FFF;
   background: rgba(255,255,255,0.8);
+  height: 100%;
 }
 
 .modal-backdrop {

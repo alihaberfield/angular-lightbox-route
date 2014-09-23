@@ -24,34 +24,52 @@
 }
 
 .icon-star:before {
-	content: "\f005";
+    content: "\f005";
 }
 .icon-star-o:before {
-	content: "\f006";
+    content: "\f006";
 }
 .icon-check:before {
-	content: "\f00c";
+    content: "\f00c";
 }
 .icon-times:before {
-	content: "\f00d";
+    content: "\f00d";
 }
 .icon-clock-o:before {
-	content: "\f017";
+    content: "\f017";
 }
 .icon-chevron-left:before {
-	content: "\f053";
+    content: "\f053";
 }
 .icon-chevron-right:before {
-	content: "\f054";
+    content: "\f054";
 }
 .icon-arrow-left:before {
-	content: "\f060";
+    content: "\f060";
 }
 .icon-arrow-right:before {
-	content: "\f061";
+    content: "\f061";
 }
 .icon-leaf:before {
-	content: "\f06c";
+    content: "\f06c";
+}
+.icon-trophy:before, .icon-sports:before {
+    content: "\f091";
+}
+.icon-stethoscope:before {
+    content: "\f0f1";
+}
+.icon-suitcase:before, .icon-todo:before {
+    content: "\f0f2";
+}
+.icon-coffee:before {
+    content: "\f0f4";
+}
+.icon-cutlery:before {
+    content: "\f0f5";
+}
+.icon-bullseye:before {
+    content: "\f140";
 }
 .icon-trophy:before, .icon-sports {
 	content: "\f091";
@@ -72,11 +90,12 @@
 	content: "\f140";
 }
 .icon-pagelines:before {
-	content: "\f18c";
+    content: "\f18c";
 }
 .icon-child:before {
-	content: "\f1ae";
+    content: "\f1ae";
 }
 .icon-books:before {
-	content: "\e600";
+    content: "\e600";
 }
+

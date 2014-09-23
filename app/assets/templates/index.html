@@ -35,7 +35,7 @@
 
         <div ng-repeat="category in categories">
             <p class="sub-heading">Today's {{ category.shortName }} progress:
-                <span ng-repeat="activity in category.activities | orderBy:'input'" ng-class="{'icon-star': sport.input, 'icon-star-o': !sport.input}">
+                <span ng-repeat="activity in category.activities | orderBy:'input'" ng-class="{'icon-star': activity.input, 'icon-star-o': !activity.input}">
                 </span>
             </p>
 
@@ -43,8 +43,9 @@
 
             <a href="#/cat/{{ category.shortName }}/" class="button expand">
             <span class="left icon-{{ category.shortName }}">
-                {{ category.callToAct }}
+
             </span>
+                {{ category.callToAct }}
             </a>
 
         </div>

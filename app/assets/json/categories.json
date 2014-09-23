@@ -1,0 +1,84 @@
+[
+    {
+        "shortName": "sports",
+        "longName": "Physical Activity Goals",
+        "callToAct": "Record your sporting activity",
+        "activities": [
+            {
+                "shortName": "walk",
+                "longName": "Walking and power-walking",
+                "menuText": "Have you been walking today?",
+                "longText": "<p>Walking (also known as ambulation) is one of the main gaits of locomotion among legged animals, and is typically slower than running and other gaits. Walking is defined by an 'inverted pendulum' gait in which the body vaults over the stiff limb or limbs with each step. This applies regardless of the number of limbs - even arthropods, with six, eight or more limbs, walk.</p>",
+                "unit": "minutes",
+                "recordMessage": " minutes of walking today, well done!"
+            },
+            {
+                "shortName": "run",
+                "longName": "Running or jogging",
+                "menuText": "Been out for a run?",
+                "longText": "<p>Running is a means of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. This is in contrast to walking, where one foot is always in contact with the ground, the legs are kept mostly straight and the center of gravity vaults over the stance leg or legs in an inverted pendulum fashion.</p> <p>A characteristic feature of a running body from the viewpoint of spring-mass mechanics is that changes in kinetic and potential energy within a stride occur simultaneously, with energy storage accomplished by springy tendons and passive muscle elasticity. The term running can refer to any of a variety of speeds ranging from jogging to sprinting.</p>",
+                "unit": "kilometers",
+                "recordMessage": " kms run today, great work!"
+            },
+            {
+                "shortName": "dance",
+                "longName": "Dancing and aerobics",
+                "menuText": "Is today a dancing day?",
+                "longText": "<p>Dance is a type of art that generally involves movement of the body, often rhythmic and to music. It is performed in many cultures as a form of emotional expression, social interaction, or exercise, in a spiritual or performance setting, and is sometimes used to express ideas or tell a story. Dance may also be regarded as a form of nonverbal communication between humans or other animals, as in bee dances and behaviour patterns such as a mating dances.</p>",
+                "unit": "songs",
+                "recordMessage": " songs danced today!"
+            },
+            {
+                "shortName": "cycle",
+                "longName": "Cycling",
+                "menuText": "Did you ride to work today?",
+                "longText": "<p>Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, or for sport.[1] Persons engaged in cycling are referred to as 'cyclists', 'bikers', or less commonly, as 'bicyclists'. Apart from two-wheeled bicycles, 'cycling' also includes the riding of unicycles, tricycles, quadracycles, and similar human-powered vehicles (HPVs).</p>",
+                "unit": "kilometers",
+                "recordMessage": " kms of cycle power today!"
+            },
+            {
+                "shortName": "meditate",
+                "longName": "Meditation",
+                "menuText": "Have you had your meditation moment today?",
+                "longText": "<p>Meditation is a practice in which an individual trains the mind or induces a mode of consciousness, either to realize some benefit[1] or as an end in itself. The term meditation refers to a broad variety of practices (much like the term sports) that includes techniques designed to promote relaxation, build internal energy or life force (qi, ki, prana, etc.) and develop compassion, love, patience, generosity and forgiveness.</p> <p>A particularly ambitious form of meditation aims at effortlessly sustained single-pointed concentration meant to enable its practitioner to enjoy an indestructible sense of well-being while engaging in any life activity.</p>",
+                "unit": "minutes",
+                "recordMessage": " minutes of inner peace!"
+            }
+        ]
+    },
+    {
+        "shortName": "goals",
+        "longName": "Life Maintenance Goals",
+        "callToAct": "Get things done",
+        "activities": [
+            {
+                "shortName": "doctor",
+                "longName": "Schedule doctor appointment",
+                "menuText": "Have you scheduled all necessary doctor appointments?",
+                "recordMessage": "Medical business taken care of!",
+                "longText": "<p>A physician is a professional who practices medicine, which is concerned with promoting, maintaining or restoring human health through the study, diagnosis, and treatment of disease, injury, and other physical and mental impairments. They may focus their practice on certain disease categories, types of patients, or methods of treatment – known as specialist medical practitioners – or assume responsibility for the provision of continuing and comprehensive medical care to individuals, families, and communities – known as general practitioners. Medical practice properly requires both a detailed knowledge of the academic disciplines (such as anatomy and physiology) underlying diseases and their treatment – the science of medicine – and also a decent competence in its applied practice – the art or craft of medicine.</p><p>Both the role of the physician and the meaning of the word itself vary around the world, including a wide variety of qualifications and degrees, but there are some common elements. For example, medical ethics require that physicians show consideration, compassion and benevolence for their patients.</p>"
+            },
+            {
+                "shortName": "todo",
+                "longName": "Cross an item off to-do list",
+                "menuText": "Did you cross an item off your to-do list today?",
+                "recordMessage": "To-do list item done, congratulations!",
+                "longText": "<p>Time management may be aided by a range of skills, tools, and techniques used to manage time when accomplishing specific tasks, projects, and goals complying with a due date. Initially, time management referred to just business or work activities, but eventually the term broadened to include personal activities as well. A time management system is a designed combination of processes, tools, techniques, and methods. Time management is usually a necessity in any project development as it determines the project completion time and scope.</p>"
+            },
+            {
+                "shortName": "meal",
+                "longName": "Eat healthy meals",
+                "menuText": "Did you choose healthy meals today?",
+                "recordMessage": "Today was a healthy meal day!",
+                "longText": "<p>A meal is an eating occasion that takes place at a certain time and includes specific, prepared food, or the food eaten on that occasion. The names used for specific meals in English varies greatly depending on the speaker's culture, the time of day, or the size of the meal.</p><p>Meals occur primarily at homes, restaurants, and cafeterias, but may occur anywhere. Regular meals occur on a daily basis, typically several times a day. Special meals are usually held in conjunction with such occasions as birthdays, weddings, anniversaries, and holidays. A meal is different from a snack in that meals are generally larger, more varied, and more filling than snacks.</p>"
+            },
+            {
+                "shortName": "drink",
+                "longName": "Drink 2L of water, tea or juice",
+                "menuText": "Have you met your liquid target today?",
+                "recordMessage": "Today is fully hydrated!",
+                "longText": "<p>Drinks, or beverages, are liquids specifically prepared for human consumption. In addition to basic needs, beverages form part of the culture of human society. Although most beverages, including juice, soft drinks, and carbonated drinks, have some form of water in them, water itself is often not classified as a beverage, and the word beverage has been recurrently defined as not referring to water.</p>"
+            }
+        ]
+    }
+]

@@ -68,7 +68,19 @@
 .icon-meal:before {
   content: "\f0f5";
 }
-.icon-todo:before {
+.icon-stethoscope:before {
+  content: "\f0f1";
+}
+.icon-suitcase:before, .icon-todo:before {
+  content: "\f0f2";
+}
+.icon-coffee:before {
+  content: "\f0f4";
+}
+.icon-cutlery:before {
+  content: "\f0f5";
+}
+.icon-bullseye:before {
   content: "\f140";
 }
 .icon-pagelines:before {
@@ -80,3 +92,4 @@
 .icon-books:before {
   content: "\e600";
 }
+
