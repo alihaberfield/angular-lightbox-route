@@ -41,7 +41,7 @@
         <h1>GoldStars Goal Tracker</h1>
 
         <div ng-repeat="category in categories" class="menu">
-            <p class="sub-heading">Today's {{ category.shortName }} progress:
+            <p class="sub-heading"><span class="today-progress">Today's {{ category.shortName }} progress:</span>
                 <span ng-repeat="activity in category.activities | orderBy:'input'" ng-class="{'icon-star': activity.input, 'icon-star-o': !activity.input}">
                 </span>
             </p>

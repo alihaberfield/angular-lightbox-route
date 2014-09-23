@@ -19,8 +19,6 @@ a {
 }
 
 
-
-
 .modal-backdrop {
   position: absolute;
   top: 0;
@@ -104,11 +102,25 @@ input[type="checkbox"] {
   }
 }
 
-
+//Progress stars
 .sub-heading {
   color: lighten($dark-grey, 20%);
-  font-size:2em;
+  font-size: 1.5em;
+  line-height: 2em;
+
+  @media #{$medium} {
+    font-size:2em;
+  }
 }
+
+.today-progress {
+  width: 100%;
+  display: block;
+  @media #{$medium} {
+    display:inline;
+  }
+}
+
 .icon-star-o {
   color: $dark-grey;
 }
@@ -120,6 +132,7 @@ input[type="checkbox"] {
 .menu {
   list-style: none;
   margin-left: 0;
+  padding-left:0;
 
   a {
     display:block;
@@ -130,13 +143,21 @@ input[type="checkbox"] {
     }
   }
   .button.expand {
-    line-height: 1.5em;
     padding: 0.5em;
-    font-size:1.5em;
+    font-size:1.25em;
+    line-height: 1.25em;
+
+    @media #{$medium} {
+      font-size:1.5em;
+      line-height: 1.5em;
+    }
 
     .left {
-      margin-left:0.5em;
-      font-size:1.5em;
+      @media #{$medium} {
+        font-size:1.5em;
+        margin-left:0.5em;
+      }
+
     }
   }
 }
