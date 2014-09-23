@@ -31,23 +31,22 @@
     <div class="large-12 columns page" role="content" ng-controller="MenuCtrl">
 
         <h1>GoldStars Goal Tracker</h1>
-        <p class="sub-heading">Today's progress:<br/>
-            <span ng-repeat="card in cards | orderBy:'input'" ng-class="{'icon-star': card.input, 'icon-star-o': !card.input}">
+        <div ng-repeat="category in categories">
+            <p class="sub-heading">Today's {{ category.shortName }} progress:
+                <span ng-repeat="activity in category.activities | orderBy:'input'" ng-class="{'icon-star': activity.input, 'icon-star-o': !activity.input}">
+                </span>
+            </p>
+
+
+
+            <a href="#/cat/{{ category.shortName }}/" class="button expand">
+            <span class="left icon-{{ category.shortName }}">
+
             </span>
-        </p>
+                {{ category.callToAct }}
+            </a>
 
-        <p class="intro">Enter your activity into your goals to make progress:</p>
-
-        <ul class="menu">
-            <li ng-repeat="card in cards" ng-class="{'complete': card.input}" class="button expand card-{{ card.shortName}}">
-                <a href="#/card/{{ card.shortName }}">
-                <span class="left" ng-class="{'icon-clock-o' : !card.input, 'icon-check': card.input}"></span>
-
-                    <span ng-if="!card.input">{{ card.menuText }}</span>
-                    <span ng-if="card.input">{{ card.input }} {{ card.recordMessage }}</span>
-                </a>
-            </li>
-        </ul>
+        </div>
 
 
 

@@ -3,17 +3,22 @@
 angular.module('myApp', [
     'ngRoute',
     'ui.bootstrap',
-    'myApp.services',
     'myApp.menu',
+    'myApp.services',
     'myApp.modal'
 
 ])
 .config(function($routeProvider) {
     $routeProvider
-        .when('/card/:name', {
+        .when('/cat/:catname/card/:cardname', {
             templateUrl : 'modalContainer',
-            controller : 'ModalContainerCtrl'
+            controller : 'ModalCtrl'
         })
+        .when('/cat/:catname', {
+            templateUrl : 'modalContainer',
+            controller : 'ModalCtrl'
+        })
+
         .when('/menu', {
             controller : 'MenuCtrl'
         })

@@ -1,73 +1,111 @@
 angular.module('myApp.services', [])
     .service('DataService', ['$http', '$q', function($http, $q) {
 
-        // Return public API.
-        return({
-            getJSON: getJSON,
-            getCard: getCard,
-            getNext: getNext,
-            getPrev: getPrev
-        });
-
         var card,
             cards,
             next,
             prev,
             nextIndex,
-            prevIndex;
+            prevIndex,
+            categories = {};
 
-        function getCard(name) {
-            var i;
-            if (cards) {
-                for (i = 0; i<cards.length;i++) {
-                    if (cards[i].shortName == name) {
-                        card = cards[i];
-                        nextIndex = i + 1;
-                        prevIndex = i - 1;
-                        next = cards[nextIndex];
-                        prev = cards[prevIndex];
-                        return card;
-                    }
+        // Return public API.
+        return({
+            getJSON: getJSON,
+            getCatNext: getCatNext,
+            getCatPrev: getCatPrev,
+            getCardNext: getCardNext,
+            getCardPrev: getCardPrev,
+            setCategory: setCategory,
+            getCategory: getCategory,
+            categories: categories
+        });
+
+
+        function setCategory(name, category) {
+            categories[name] = category;
+        }
+
+        function getCategory(name) {
+            var category;
+            for (var i = 0; i < categories.length; i++) {
+                if (categories[i].shortName == name) {
+                    category = categories[i];
                 }
             }
-            return card;
+            return category;
         }
 
-        function getNext() {
-            if (next) {
-                return next.shortName;
-            } else {
-                return cards[0].shortName;
+
+        function getCardNext(name, arr) {
+            var self = findIndex(name, arr),
+                next;
+
+            next = arr[self+1];
+            if(!next) {
+                next = arr[0];
+            }
+            return next.shortName;
+        }
+
+        function getCardPrev(name, arr) {
+            var self = findIndex(name, arr),
+                prev;
+
+            prev = arr[self-1];
+            if (!prev) {
+                prev = arr[arr.length-1];
             }
 
+            return prev.shortName;
         }
 
-        function getPrev() {
-            if (prev) {
-                return prev.shortName;
-            } else {
+        function getCatNext(name) {
+            var self = findIndex(name, categories),
+                next;
 
-                return cards[cards.length-1].shortName;
+            next = categories[self+1];
+            if (!next) {
+                next = categories[0];
             }
+            return next.shortName;
 
         }
 
+        function getCatPrev(name) {
+            var self = findIndex(name, categories),
+                prev;
+            prev = categories[self-1];
 
-        function getJSON() {
+            if (!prev) {
+                prev = categories[categories.length-1];
+            }
+            return prev.shortName;
+        }
+
+        function findIndex(name, arr) {
+            var index;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].shortName == name) {
+                    index = i;
+                }
+            }
+            return index;
+        }
+
+        function getJSON(activity) {
             var request = $http({
                 method: "get",
                 dataType: 'jsonp',
-                url: "../assets/json/activities.json",
+                url: "../assets/json/categories.json",
                 params: {
                     action: "get"
                 }
+
             });
 
-            if (!cards) {
-                return( request.then( handleSuccess, handleError ) );
-            } else {
-                return cards;
-            }
+
+            return( request.then( handleSuccess, handleError ) );
 
         }
 
@@ -85,16 +123,9 @@ angular.module('myApp.services', [])
 
         function handleSuccess( response ) {
             cards = response.data;
-            return( cards );
+            categories = response.data;
+            return( categories );
 
         }
-
-    }])
-    .service('InputService', ['', function() {
-
-        //Public API
-        return ({
-
-        })
 
     }]);

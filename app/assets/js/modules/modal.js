@@ -1,18 +1,30 @@
 angular.module('myApp.modal', ['ngRoute'])
 
-    .controller('ModalContainerCtrl',['$scope', '$modal', '$route', '$location', function($scope, $modal, $route, $location) {
+    .controller('ModalCtrl',['$scope', '$modal', '$route', '$location', 'DataService', function($scope, $modal, $route, $location, DataService) {
 
+        var modalInstance, modalDetailInstance, detail;
 
-        var modalInstance = $modal.open({
-            templateUrl : '../assets/templates/modal.html',
-            controller: 'ModalCtrl'
-        });
+        detail = $route.current.pathParams.cardname;
 
-        $scope.activity = $route.current.pathParams.name;
+        if (!modalInstance) {
+            modalInstance = $modal.open({
+                templateUrl : '../assets/templates/modal-category.html',
+                controller: 'ModalCategoryCtrl'
+            });
+        }
 
+        if (detail && !modalDetailInstance) {
+            modalDetailInstance = $modal.open({
+                templateUrl : '../assets/templates/modal-detail.html',
+                controller: 'ModalDetailCtrl'
+            });
+        }
 
         $scope.$on("$locationChangeStart", function (event, nextLocation, currentLocation) {
             modalInstance.close();
+            if (modalDetailInstance) {
+                modalDetailInstance.close();
+            }
         });
 
         //When modal overlay is clicked, return to menu
@@ -22,8 +34,10 @@ angular.module('myApp.modal', ['ngRoute'])
         };
 
     }])
-    .controller('ModalCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
+    .controller('ModalCategoryCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
 
+        var name = $route.current.pathParams.catname
+        $scope.category = DataService.getCategory(name);
 
         //When close button is clicked, return to menu
         $scope.close = function () {
@@ -31,16 +45,49 @@ angular.module('myApp.modal', ['ngRoute'])
             $location.path('/menu');
         };
 
-        $scope.activity = $route.current.pathParams.name;
+        console.log("Modal category control")
 
-        $scope.card = DataService.getCard($scope.activity);
-        $scope.next = DataService.getNext();
-        $scope.prev = DataService.getPrev();
+
+        //Get next & previous category links
+        $scope.next = DataService.getCatNext(name, DataService.categories);
+        $scope.prev = DataService.getCatPrev(name);
 
 
         $scope.TrustDangerousSnippet = function(post) {
             return $sce.trustAsHtml(post);
         };
 
+
+    }]).controller('ModalDetailCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
+
+
+        var name = $route.current.pathParams.cardname;
+        $scope.category = DataService.getCategory($route.current.pathParams.catname);
+
+        //When close button is clicked, return to menu
+        $scope.closeDetail = function () {
+            $modalInstance.dismiss();
+            $location.path('/cat/' + $route.current.pathParams.catname);
+        };
+
+        $scope.next = DataService.getCardNext(name, $scope.category.activities);
+        $scope.prev = DataService.getCardPrev(name, $scope.category.activities);
+
+
+        $scope.TrustDangerousSnippet = function(post) {
+            return $sce.trustAsHtml(post);
+        };
+
+
+        //Find activity in category
+        function findActivity(name) {
+            for (var i=0; i<$scope.category.activities.length; i++) {
+                if (name == $scope.category.activities[i].shortName) {
+                    $scope.activity = $scope.category.activities[i];
+                }
+            }
+        }
+
+        findActivity(name)
 
     }]);
