@@ -6,16 +6,23 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>GoldStars Goal Tracker</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../assets/lib/css/normalize.css">
   <link rel="stylesheet" href="../assets/lib/css/main.css">
 
+    <!-- @if NODE_ENV == 'DEVELOPMENT' -->
 
     <link rel="stylesheet" href="../assets/css/styles.css"/>
 
+    <!-- @endif -->
 
+    <!-- @if NODE_ENV == 'PRODUCTION' -->
+
+    <link rel="stylesheet" href="../assets/css/styles.min.css"/>
+
+    <!-- @endif -->
 
     <script src="../assets/lib/js/modernizr-2.6.2.min.js"></script>
 
@@ -69,17 +76,17 @@
 
   <div ng-view></div>
 
-<!-- Libraries -->
-  <script src="../assets/lib/js/jquery-1.8.3.min.js"></script>
-  <script src="../assets/lib/js/angular.js"></script>
-  <script src="../assets/lib/js/angular-route.js"></script>
 
-<!-- TODO: localise -->
-<!-- <script src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.7.0.js"></script> -->
-<script src="../assets/lib/js/ui-bootstrap-tpls-0.7.0.js"></script>
 
-  <!-- @if NODE_ENV == 'DEVELOPMENT' -->
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 
+    <!-- Libraries -->
+    <script src="../assets/lib/js/jquery-1.8.3.min.js"></script>
+    <script src="../assets/lib/js/angular.js"></script>
+    <script src="../assets/lib/js/angular-route.js"></script>
+    <script src="../assets/lib/js/ui-bootstrap-tpls-0.7.0.js"></script>
+
+    <!-- Modules -->
     <script src="../assets/js/modules/app.js"></script>
     <script src="../assets/js/modules/service.js"></script>
     <script src="../assets/js/modules/menu.js"></script>
@@ -89,9 +96,10 @@
 
   <!-- @if NODE_ENV == 'PRODUCTION' -->
 
+  <script src="../assets/js/prod/libs.js"></script>
   <script src="../assets/js/prod/production.min.js"></script>
 
-  <!-- @endif -->
+<!-- @endif -->
 
 </body>
 </html>

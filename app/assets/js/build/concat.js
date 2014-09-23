@@ -3,17 +3,22 @@
 angular.module('myApp', [
     'ngRoute',
     'ui.bootstrap',
-    'myApp.services',
     'myApp.menu',
+    'myApp.services',
     'myApp.modal'
 
 ])
 .config(function($routeProvider) {
     $routeProvider
-        .when('/card/:name', {
+        .when('/cat/:catname/card/:cardname', {
             templateUrl : 'modalContainer',
-            controller : 'ModalContainerCtrl'
+            controller : 'ModalCtrl'
         })
+        .when('/cat/:catname', {
+            templateUrl : 'modalContainer',
+            controller : 'ModalCtrl'
+        })
+
         .when('/menu', {
             controller : 'MenuCtrl'
         })
@@ -24,34 +29,50 @@ angular.module('myApp', [
 angular.module('myApp.menu', ['ngRoute'])
     .controller('MenuCtrl', ['$scope', 'DataService', function($scope, DataService) {
 
-        $scope.cards = loadData();
+
+        $scope.categories = loadData();
 
         function loadData() {
-            // The articleService returns a promise.
             DataService.getJSON()
                 .then(
                 function( articles ) {
-                    $scope.cards = $.map(articles, function(el) { return el; });
+                    $scope.categories = $.map(articles, function(el) { return el; });
 
                 }
             );
+
         }
+
+
     }]);
 angular.module('myApp.modal', ['ngRoute'])
 
-    .controller('ModalContainerCtrl',['$scope', '$modal', '$route', '$location', function($scope, $modal, $route, $location) {
 
+    .controller('ModalCtrl',['$scope', '$modal', '$route', '$location', 'DataService', function($scope, $modal, $route, $location, DataService) {
 
-        var modalInstance = $modal.open({
-            templateUrl : '../assets/templates/modal.html',
-            controller: 'ModalCtrl'
-        });
+        var modalInstance, modalDetailInstance, detail;
 
-        $scope.activity = $route.current.pathParams.name;
+        detail = $route.current.pathParams.cardname;
 
+        if (!modalInstance) {
+            modalInstance = $modal.open({
+                templateUrl : '../assets/templates/modal-category.html',
+                controller: 'ModalCategoryCtrl'
+            });
+        }
+
+        if (detail && !modalDetailInstance) {
+            modalDetailInstance = $modal.open({
+                templateUrl : '../assets/templates/modal-detail.html',
+                controller: 'ModalDetailCtrl'
+            });
+        }
 
         $scope.$on("$locationChangeStart", function (event, nextLocation, currentLocation) {
             modalInstance.close();
+            if (modalDetailInstance) {
+                modalDetailInstance.close();
+            }
         });
 
         //When modal overlay is clicked, return to menu
@@ -61,8 +82,11 @@ angular.module('myApp.modal', ['ngRoute'])
         };
 
     }])
-    .controller('ModalCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
 
+    .controller('ModalCategoryCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
+
+        var name = $route.current.pathParams.catname
+        $scope.category = DataService.getCategory(name);
 
         //When close button is clicked, return to menu
         $scope.close = function () {
@@ -70,11 +94,10 @@ angular.module('myApp.modal', ['ngRoute'])
             $location.path('/menu');
         };
 
-        $scope.activity = $route.current.pathParams.name;
 
-        $scope.card = DataService.getCard($scope.activity);
-        $scope.next = DataService.getNext();
-        $scope.prev = DataService.getPrev();
+        //Get next & previous category links
+        $scope.next = DataService.getCatNext(name, DataService.categories);
+        $scope.prev = DataService.getCatPrev(name);
 
 
         $scope.TrustDangerousSnippet = function(post) {
@@ -82,78 +105,148 @@ angular.module('myApp.modal', ['ngRoute'])
         };
 
 
+    }]).controller('ModalDetailCtrl', ['$scope', '$route', '$location', '$sce', '$timeout', '$modalInstance', 'DataService', function($scope, $route, $location, $sce, $timeout, $modalInstance, DataService) {
+
+
+        var name = $route.current.pathParams.cardname;
+        $scope.category = DataService.getCategory($route.current.pathParams.catname);
+
+        //When close button is clicked, return to menu
+        $scope.closeDetail = function () {
+            $modalInstance.dismiss();
+            $location.path('/cat/' + $route.current.pathParams.catname);
+        };
+
+        $scope.next = DataService.getCardNext(name, $scope.category.activities);
+        $scope.prev = DataService.getCardPrev(name, $scope.category.activities);
+
+
+        $scope.TrustDangerousSnippet = function(post) {
+            return $sce.trustAsHtml(post);
+        };
+
+
+        //Find activity in category
+        function findActivity(name) {
+            for (var i=0; i<$scope.category.activities.length; i++) {
+                if (name == $scope.category.activities[i].shortName) {
+                    $scope.activity = $scope.category.activities[i];
+                }
+            }
+        }
+
+        findActivity(name)
+
     }]);
 
 angular.module('myApp.services', [])
     .service('DataService', ['$http', '$q', function($http, $q) {
-
-        // Return public API.
-        return({
-            getJSON: getJSON,
-            getCard: getCard,
-            getNext: getNext,
-            getPrev: getPrev
-        });
 
         var card,
             cards,
             next,
             prev,
             nextIndex,
-            prevIndex;
+            prevIndex,
+            categories = {};
 
-        function getCard(name) {
-            var i;
-            if (cards) {
-                for (i = 0; i<cards.length;i++) {
-                    if (cards[i].shortName == name) {
-                        card = cards[i];
-                        nextIndex = i + 1;
-                        prevIndex = i - 1;
-                        next = cards[nextIndex];
-                        prev = cards[prevIndex];
-                        return card;
-                    }
+        // Return public API.
+        return({
+            getJSON: getJSON,
+            getCatNext: getCatNext,
+            getCatPrev: getCatPrev,
+            getCardNext: getCardNext,
+            getCardPrev: getCardPrev,
+            setCategory: setCategory,
+            getCategory: getCategory,
+            categories: categories
+        });
+
+
+        function setCategory(name, category) {
+            categories[name] = category;
+        }
+
+        function getCategory(name) {
+            var category;
+            for (var i = 0; i < categories.length; i++) {
+                if (categories[i].shortName == name) {
+                    category = categories[i];
                 }
             }
-            return card;
+            return category;
         }
 
-        function getNext() {
-            if (next) {
-                return next.shortName;
-            } else {
-                return cards[0].shortName;
+
+        function getCardNext(name, arr) {
+            var self = findIndex(name, arr),
+                next;
+
+            next = arr[self+1];
+            if(!next) {
+                next = arr[0];
+            }
+            return next.shortName;
+        }
+
+        function getCardPrev(name, arr) {
+            var self = findIndex(name, arr),
+                prev;
+
+            prev = arr[self-1];
+            if (!prev) {
+                prev = arr[arr.length-1];
             }
 
+            return prev.shortName;
         }
 
-        function getPrev() {
-            if (prev) {
-                return prev.shortName;
-            } else {
+        function getCatNext(name) {
+            var self = findIndex(name, categories),
+                next;
 
-                return cards[cards.length-1].shortName;
+            next = categories[self+1];
+            if (!next) {
+                next = categories[0];
             }
+            return next.shortName;
 
         }
 
+        function getCatPrev(name) {
+            var self = findIndex(name, categories),
+                prev;
+            prev = categories[self-1];
 
-        function getJSON() {
+            if (!prev) {
+                prev = categories[categories.length-1];
+            }
+            return prev.shortName;
+        }
+
+        function findIndex(name, arr) {
+            var index;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].shortName == name) {
+                    index = i;
+                }
+            }
+            return index;
+        }
+
+        function getJSON(activity) {
             var request = $http({
                 method: "get",
                 dataType: 'jsonp',
-                url: "../assets/json/activities.json",
+                url: "../assets/json/categories.json",
                 params: {
                     action: "get"
                 }
+
             });
 
-            if (!cards) {
-                return( request.then( handleSuccess, handleError ) );
-            } else {
-                return cards;
-            }
+
+            return( request.then( handleSuccess, handleError ) );
 
         }
 
@@ -171,16 +264,9 @@ angular.module('myApp.services', [])
 
         function handleSuccess( response ) {
             cards = response.data;
-            return( cards );
+            categories = response.data;
+            return( categories );
 
         }
-
-    }])
-    .service('InputService', ['', function() {
-
-        //Public API
-        return ({
-
-        })
 
     }]);

@@ -47,11 +47,19 @@ module.exports = function(grunt) {
 
         },
         concat: {
-            dist: {
-                src: [
-                    'app/assets/js/modules/*.js',
-                ],
+            modules: {
+                src: ['app/assets/js/modules/*.js'],
                 dest: 'app/assets/js/build/concat.js',
+            },
+            libs: {
+                src: [
+                    'app/assets/lib/js/jquery-1.8.3.min.js',
+                    'app/assets/lib/js/angular.js',
+                    'app/assets/lib/js/angular-route.js',
+                    'app/assets/lib/js/angular.js',
+                    'app/assets/lib/js/ui-bootstrap-tpls-0.7.0.js'
+                ],
+                dest: 'app/assets/js/prod/libs.js'
             }
         },
         removelogging: {
@@ -67,6 +75,17 @@ module.exports = function(grunt) {
                 files: {
                     'app/assets/js/prod/production.min.js': ['app/assets/js/build/concat.js']
                 }
+            }
+        },
+        cssmin: {
+            my_target: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/assets/css/',
+                    src: ['styles.css'],
+                    dest: 'app/assets/css/',
+                    ext: '.min.css'
+                }]
             }
         },
         watch: {
@@ -93,9 +112,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks("grunt-remove-logging");
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.registerTask('default', ['jshint', 'uncss']);
     grunt.registerTask('dev', ['jshint', 'env:dev', 'preprocess:dev']);
-    grunt.registerTask('prod', ['jshint', 'concat', 'removelogging', 'uglify', 'env:prod', 'preprocess:prod']);
+    grunt.registerTask('prod', ['jshint', 'concat', 'removelogging', 'uglify', 'cssmin', 'env:prod', 'preprocess:prod']);
 
 };
